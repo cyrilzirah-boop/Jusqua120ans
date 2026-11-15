@@ -801,6 +801,43 @@ section[id]{scroll-margin-top:calc(var(--navh,150px) + 14px)}
 .modt i::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .2s}
 .modt[aria-pressed="true"] i{background:var(--rose,#FF3B6B)}.modt[aria-pressed="true"] i::after{transform:translateX(16px)}
 .modt[aria-pressed="false"]{opacity:.7}
+.fsend{display:flex;flex-direction:column;gap:6px;margin:4px 0 14px}.fsend small{color:var(--muted);text-align:center;line-height:1.35}
+/* ===== Espace jeune ===== */
+.kdefs{display:grid;gap:10px}.kdef{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+.kdef.dn{border-color:#FFD98A;background:#FFF9EA}.kdef.ok{border-color:#9ADBB5;background:#EEFBF3}.kde{font-size:1.7rem}.kdt{flex:1;display:flex;flex-direction:column;font-weight:700;line-height:1.3}.kdt small{font-weight:500;color:var(--muted)}
+.kdef .btn{padding:9px 14px;flex:none}
+.kbadges{margin-top:18px}.kbadges>div{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.kbadge{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:1.6rem;padding:10px 4px;border-radius:14px;background:var(--bg2);filter:grayscale(1);opacity:.45;text-align:center}.kbadge small{font-size:.66rem;line-height:1.1}.kbadge.on{filter:none;opacity:1;background:#FFF1CC}
+.ksc{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:10px}.kse{font-size:1.8rem}.ksb{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}.ksb small{color:var(--muted)}.ksb p{margin:2px 0;font-size:.88rem;line-height:1.35}
+.ksa{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.kst{font-weight:700}.kst.ok{color:#1a9b5a}.kst.non{color:#C7253E}
+.kpf{display:flex;flex-direction:column;gap:6px;margin-top:8px}.kpf input,.kpf select{width:100%;box-sizing:border-box;border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;font-size:16px;background:var(--card);color:var(--ink)}
+.kmem{display:flex;flex-wrap:wrap;gap:12px;margin:4px 0 14px}.kmb{display:flex;flex-direction:column;align-items:center;gap:4px;width:64px}
+.kmb i{width:48px;height:48px;border-radius:50%;background:#7C5CFF;color:#fff;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:1.2rem}.kmb.me i{background:#FF3B6B}.kmb small{font-size:.72rem;font-weight:600;text-align:center;color:var(--ink)}
+.kgames{display:grid;gap:10px}.kgame{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:12px;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:18px;padding:14px;color:var(--ink)}
+.kgame span{grid-row:span 2;font-size:2rem;align-self:center}.kgame small{color:var(--muted)}
+.kmot{display:grid;gap:6px;justify-content:center;margin:10px 0 16px}.kmot>div{display:grid;grid-template-columns:repeat(5,48px);gap:6px}
+.kmot i{height:48px;border:2px solid var(--line);border-radius:10px;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:1.3rem;background:var(--card)}
+.kmot i.ok{background:#1a9b5a;color:#fff;border-color:#1a9b5a}.kmot i.mid{background:#F5B800;color:#fff;border-color:#F5B800}.kmot i.no{background:#9b8a95;color:#fff;border-color:#9b8a95}.kmot i.cur{border-color:var(--ink)}
+.kkb{display:grid;gap:6px}.kkb>div{display:flex;gap:4px;justify-content:center}.kkb button{flex:1;max-width:36px;height:46px;border:0;border-radius:8px;background:var(--bg2);font-weight:800;color:var(--ink)}.kkb button.wide{max-width:56px;flex:1.5}
+.kcalc,.kqui{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:24px 0}.kcalc b{font-family:var(--f-display);font-size:2.6rem}.kqui b{font-family:var(--f-display);font-size:2.2rem;line-height:1.15;padding:20px 0}
+.kcalc form{display:flex;gap:8px}.kcalc input{width:140px;font-size:1.6rem;text-align:center;border:2px solid var(--line);border-radius:14px;padding:10px;background:var(--card);color:var(--ink)}.kcalc input.bad{border-color:#C7253E;animation:none}
+.kpbox{background:#F3EEFF;border:1.5px solid #CDBDFF;border-radius:18px;padding:14px;margin:0 0 14px;display:flex;flex-direction:column;gap:8px}.kpr{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.9rem}.kpr .two{display:flex;gap:6px}
+html.kidmode #tabbar button{font-size:.72rem}
+/* ===== Cagnotte ===== */
+.cagbox{background:linear-gradient(135deg,#FFF6E0,#FFE9F0);border:1.5px solid #FFD98A;border-radius:18px;padding:14px;margin:14px 0;display:flex;flex-direction:column;gap:6px}
+.cagbox small{color:var(--muted);line-height:1.4}.chip.on{background:#FFE7A3;border-color:#F5B800}
+.cagc{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:0;border-radius:18px;padding:14px 16px;margin:0 0 12px;background:linear-gradient(135deg,#FFD25E,#FF9E3D);color:#3B2200;box-shadow:0 8px 20px rgba(255,158,61,.3)}
+.cagc .cage{font-size:1.8rem}.cagc span:nth-child(2){flex:1;display:flex;flex-direction:column}.cagc small{opacity:.85}.cagc .go{font-size:1.4rem}
+.cagtot{text-align:center;background:linear-gradient(135deg,#FFD25E,#FF9E3D);color:#3B2200;border-radius:20px;padding:16px;margin:6px 0 14px;display:flex;flex-direction:column;gap:2px}
+.cagtot b{font-family:var(--f-display);font-size:2.2rem}
+.cagrules{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:12px}.cagrules ul{margin:6px 0 0;padding-left:18px;display:grid;gap:4px;font-size:.88rem}
+.cagm{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--fc);border-radius:16px;padding:12px 14px;margin-bottom:10px;display:flex;flex-direction:column;gap:6px}
+.cagmh{display:flex;justify-content:space-between;align-items:baseline;gap:10px}.cagmh span{font-weight:800}.cagmh small{color:var(--muted);font-weight:600}
+.cagbar{height:10px;border-radius:99px;background:var(--bg2);overflow:hidden}.cagbar i{display:block;height:100%;background:linear-gradient(90deg,var(--fc),#FFB547);border-radius:99px;transition:width .4s}
+.cagm>small{color:var(--muted);font-size:.8rem}.cagev.bad{color:#C7253E}.cagev.ok{color:#1a9b5a}
+.cagact{display:flex;flex-wrap:wrap;gap:4px 14px}.cagform{display:flex;flex-direction:column;gap:6px;margin-top:6px;padding-top:10px;border-top:1px dashed var(--line)}
+.cagform input,.cagform select,.cagadd select{width:100%;box-sizing:border-box;border:1.5px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;font-size:16px;background:var(--card);color:var(--ink)}
+.cagform small{color:var(--muted)}.cagdel{display:flex;gap:8px;align-items:center;font-size:.85rem;color:var(--muted)}.cagadd{margin:4px 0 10px}
 /* ===== Nous deux ===== */
 .proof .pi{white-space:nowrap;display:inline-flex;align-items:baseline;gap:8px}
 .chemin{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:40px;counter-reset:c}
@@ -979,6 +1016,7 @@ section[id]{scroll-margin-top:calc(var(--navh,150px) + 14px)}
 @keyframes blink{50%{opacity:.25}}
 @media (max-width:900px){.gamesgrid{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.gamesgrid{grid-template-columns:1fr}}
+.links a,nav .wrap .btn{white-space:nowrap}@media (max-width:1280px){nav .links{display:none}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
 @media (max-width:900px){
@@ -1586,7 +1624,7 @@ function toast(t){const el=document.createElement("div");el.className="toast";el
 
 /* ===== Navigation simplifiée : 5 espaces, sous-menus, espaces facultatifs ===== */
 const MODS=[["famille","📚","Famille et devoirs","Devoirs sans dispute, fiches et quiz des enfants"],["jeux","🎲","Jeux à deux","Jeux en direct et défis"],["cercle","👥","Le cercle","Rencontrer d'autres couples"],["genie","✨","Le génie","Une soirée imaginée pour vous"],["offres","🎁","Offres à réserver","Voyages, nuits insolites, coffrets"]];
-function modOn(k){const m=S.mods||{};if(k in m)return !!m[k];if(k==="famille")return kids().length>0||!!(S.ans&&S.ans.enfants&&S.ans.enfants!=="non");return true}
+function modOn(k){const m=S.mods||{};if(k in m)return !!m[k];if(k==="famille")return kids().length>0||(S.fiches||[]).length>0||!!S.dev||!(S.ans&&S.ans.enfants==="non");return true}
 const GROUPS=[
  {k:"lien",e:"💞",l:"Nous deux",subs:[["lien","Notre lien"],["well",""]]},
  {k:"nous",e:"📅",l:"Agenda",subs:[["nous","Agenda"],["carnet",""]]},
@@ -1596,7 +1634,9 @@ const GROUPS=[
 const lastSub={};
 const grpOf=t=>GROUPS.find(g=>g.subs.some(x=>x[0]===t));
 function tabOK(t){if(t==="profil")return true;const g=grpOf(t);if(!g)return true;if(g.mod&&!modOn(g.mod))return false;const sb=g.subs.find(x=>x[0]===t);return !(sb[2]&&!modOn(sb[2]))}
-function drawNav(onb){const tb=$("tabbar"),sn=$("subnav");const g=grpOf(tab);if(g&&tabOK(tab))lastSub[g.k]=tab;
+function drawNav(onb){const tb=$("tabbar"),sn=$("subnav");
+  if(isKid()){sn.hidden=true;tb.innerHTML=KTABS.map(([t,e,l])=>`<button type="button" data-kt="${t}" aria-current="${tab===t?"page":"false"}"><span aria-hidden="true">${e}</span>${l}</button>`).join("");
+    tb.querySelectorAll("[data-kt]").forEach(b=>b.onclick=()=>{stopTimer();closeSheet();if(tab===b.dataset.kt){devMode=null;kGame=null}tab=b.dataset.kt;render()});return}const g=grpOf(tab);if(g&&tabOK(tab))lastSub[g.k]=tab;
   const n=toConfirm().length;
   tb.innerHTML=GROUPS.filter(x=>!x.mod||modOn(x.mod)).map(x=>`<button type="button" data-g="${x.k}" aria-current="${g&&g.k===x.k?"page":"false"}"><span aria-hidden="true">${x.e}</span>${x.l}${x.k==="nous"?`<span class="badge" id="badge"${n?"":" hidden"}>${n}</span>`:""}</button>`).join("");
   tb.querySelectorAll("[data-g]").forEach(b=>b.onclick=()=>{stopTimer();closeSheet();const x=GROUPS.find(y=>y.k===b.dataset.g);let t=lastSub[x.k];if(!t||!tabOK(t))t=x.subs[0][0];
@@ -1610,12 +1650,12 @@ function drawNav(onb){const tb=$("tabbar"),sn=$("subnav");const g=grpOf(tab);if(
 function siteMods(){document.querySelectorAll("[data-mod]").forEach(el=>{el.hidden=!modOn(el.dataset.mod)})}
 function render(){
   const onb=tab==="welcome"||tab==="q";
-  $("tabbar").hidden=isKid();document.documentElement.classList.toggle("kidmode",isKid());if(isKid()&&tab!=="devoirs")tab="devoirs";
+  $("tabbar").hidden=false;document.documentElement.classList.toggle("kidmode",isKid());if(isKid()&&!KTABS.some(t=>t[0]===tab))tab=S.kidMode.guest?"kpotes":"devoirs";
   if(!onb&&!isKid()&&!tabOK(tab))tab="lien";
   drawNav(onb);siteMods();
-  const n=toConfirm().length; $("badge").hidden=!n; $("badge").textContent=n;
+  const n=toConfirm().length;const bg=$("badge");if(bg){bg.hidden=!n;bg.textContent=n}
   $("amain").scrollTop=0;
-  ({welcome:vWelcome,q:vQ,home:vHome,explore:vExplore,carnet:vCarnet,nous:vNous,profil:vProfil,jouer:vJouer,offres:vOffres,affiche:vAffiche,genie:vGenie,lien:vLien,devoirs:vDevoirs,cercle:vCercle,auj:vAujourdhui,well:vWell})[tab]();
+  ({welcome:vWelcome,q:vQ,home:vHome,explore:vExplore,carnet:vCarnet,nous:vNous,profil:vProfil,jouer:vJouer,offres:vOffres,affiche:vAffiche,genie:vGenie,lien:vLien,devoirs:vDevoirs,cercle:vCercle,auj:vAujourdhui,well:vWell,ksort:vKSort,kjeux:vKJeux,kdefi:vKDefi,kpotes:vKPotes})[tab]();
   const cb=document.querySelector('.topmenu [aria-current="page"]');if(cb)cb.scrollIntoView({inline:"center",block:"nearest"});const ac=$("appCity");if(ac){ac.textContent=cityLabel();ac.classList.toggle("trip",!!S.trip)}
   setTimeout(()=>{try{checkInv()}catch(e){}},400);
 }
@@ -2349,12 +2389,12 @@ function agSubscribe(){
   try{lienSub()}catch(e){}
 }
 function agRefresh(){
-  const n=toConfirm().length;$("badge").hidden=!n;$("badge").textContent=n;
+  const n=toConfirm().length;const bg=$("badge");if(bg){bg.hidden=!n;bg.textContent=n}
   if(!$("app").hidden&&tab==="nous"&&nousSeg==="agenda"&&!document.querySelector(".sheet"))render0();
   checkInv();
 }
 async function loadInviter(){if(!AGDB||!pendingInv)return;try{const d=await AGDB.doc(`couples/${pendingInv}`).get();invFrom=d.exists?d.data():{};}catch(e){invFrom={}}if(!$("app").hidden&&tab==="nous")render0()}
-(async()=>{try{AGDB=(window.claude&&window.claude.use)?await window.claude.use("db"):null}catch(e){AGDB=null}agChecked=true;agSubscribe();loadInviter();agRefresh();famSub();if(isKid()){openApp("devoirs")}})();
+(async()=>{try{AGDB=(window.claude&&window.claude.use)?await window.claude.use("db"):null}catch(e){AGDB=null}agChecked=true;agSubscribe();loadInviter();agRefresh();famSub();crewSub();if(isKid()){openApp(S.kidMode.guest?"kpotes":"devoirs")}})();
 async function evSave(e){
   if(S.couple&&AGDB){try{await AGDB.collection(`couples/${S.couple}/rdv`).doc(e.id).set(e)}catch(err){toast("Enregistrement impossible : vérifiez votre accès à la page");return false}}
   else{S.agenda=(S.agenda||[]).filter(x=>x.id!==e.id);S.agenda.push(e);save();agRefresh()}
@@ -3234,6 +3274,7 @@ function devItemsFor(day){return devData().items.filter(x=>x.soir?x.soir===day:(
 function vDevoirs(){
   if(devMode==="coller")return vDevPaste();
   if(devMode==="coach")return vDevCoach();
+  if(devMode==="cagnotte")return vCagnotte();
   if(isKid()&&!["fiche","quiz","fask","coach"].includes(devMode))return vKid();
   if(devMode==="newfiche")return vFicheNew();
   if(devMode==="adapte")return vAdapte();
@@ -3244,6 +3285,7 @@ function vDevoirs(){
   const pend=d.items.filter(x=>!x.ok&&(!x.p||x.p>=today)).sort((a,b)=>(a.p||"0").localeCompare(b.p||"0"));
   const byDate={};pend.forEach(x=>{(byDate[x.p||""]=byDate[x.p||""]||[]).push(x)});
   $("amain").innerHTML=`<div class="fx"><div class="lhello"><small>Pour que les devoirs ne mangent plus vos soirées</small><h2 class="h2app">Devoirs sans dispute</h2></div>
+   ${kidParentBox()}
    <div class="wsec"><div class="wst"><span>1</span>Vos enfants</div>
     <div class="kids">${K.map((k,i)=>`<span class="kid"><button type="button" class="kname" data-kedit="${i}" aria-label="Modifier ${esc(k.n)}">${esc(k.n)} · ${esc(k.cl)}${k.b&&k.b.length?" 🌱":""}</button><button type="button" data-kdel="${i}" aria-label="Retirer ${esc(k.n)}">×</button></span>`).join("")||`<p class="disc" style="margin:6px 0">Ajoutez vos enfants pour que le génie range les devoirs et adapte ses explications à leur niveau.</p>`}</div>
     ${kEdit!=null?besoinsEditor(kEdit):K.length?`<button type="button" class="linkb kbes" data-kedit="0">＋ Préciser un besoin particulier (facultatif)</button>`:""}
@@ -3737,6 +3779,7 @@ function fichesSection(){const L=fiches();
    ${quizHistHTML()}
    <button type="button" class="btn btn-rose wide" id="fNewB">📸 Créer une fiche de révision</button>
    ${kidLinkBox()}
+   ${cagCard()}
    ${L.length?`<div class="flist">${L.map(f=>{const b=fBest(f);return `<button type="button" class="fcard" data-fid="${f.id}" style="--fc:${matColor(f.m)}"><span class="fm">${esc(f.m||"Cours")}</span><b>${esc(f.t)}</b><small>${esc(f.k||"")}${f.d?" · "+fDays(f):""}</small><span class="fsc">${b!=null?`Meilleure note : <b>${b}/20</b>`:"Quiz pas encore fait"}${f.real?` · Note du contrôle : <b>${esc(f.real)}</b>`:""}</span></button>`}).join("")}</div>`:""}</div>`}
 function vFicheNew(){const K=kids();
   $("amain").innerHTML=`<div class="fx"><div class="ghead"><button type="button" class="iconbtn" id="nfB" aria-label="Retour"><svg class="i"><use href="#i-back"/></svg></button><h2 class="h2app" style="font-size:1.5rem">📸 Nouvelle fiche de révision</h2></div>
@@ -3789,6 +3832,7 @@ async function fDownload(f){try{const d=window.claude&&window.claude.use?await w
 function vFiche(){const f=fGet(fCur);if(!f){devMode=null;return vDevoirs()}
   const sc=f.scores||[];
   $("amain").innerHTML=`<div class="fx"><div class="ghead"><button type="button" class="iconbtn" id="fB" aria-label="Retour"><svg class="i"><use href="#i-back"/></svg></button><h2 class="h2app" style="font-size:1.3rem">Fiche de révision</h2></div>
+   ${!isKid()&&f.k?`<div class="fsend"><button type="button" class="btn btn-rose wide" id="fSend">📲 Envoyer à ${esc(f.k)} (fiche + quiz)</button><small>${esc(f.k)} la reçoit dans son espace jusqua20sur20, sur son téléphone, et fait le quiz chronométré de son côté, en 3 niveaux de difficulté qu'il débloque en réussissant (12/20 minimum).${S.couple?` Pour voir ses notes et sa cagnotte : <a href="${KID_SITE}#c-${S.couple}" target="_blank" rel="noopener">suivre ${esc(f.k)} sur votre site perso</a>.`:""}</small></div>`:""}
    ${ficheHTML(f)}
    <div class="factions">${prep(f)!=null?`<div class="prep"><span>Prêt pour le contrôle</span><div class="mtrack"><i style="width:${prep(f)}%"></i></div><b>${prep(f)} %</b></div>`:""}<button type="button" class="btn btn-rose" id="fQuiz">🎯 Le défi : quiz noté sur 20</button>${(f.errs||[]).length?`<button type="button" class="btn btn-line" id="fErr" style="grid-column:1/-1">🔁 Rejouer mes ${f.errs.length} erreur${f.errs.length>1?"s":""}</button>`:""}${SAMPLE&&!isKid()?`<button type="button" class="btn btn-line" id="fNewQ" style="grid-column:1/-1">✨ Nouveau défi, plus difficile</button>`:""}<button type="button" class="btn btn-line" id="fAsk">💬 Poser une question</button><button type="button" class="btn btn-line" id="fPr" style="grid-column:1/-1">📄 PDF à imprimer</button></div>
    <div class="wsec"><div class="wst"><span>📈</span>Ses notes</div>
@@ -3800,8 +3844,9 @@ function vFiche(){const f=fGet(fCur);if(!f){devMode=null;return vDevoirs()}
   if($("fErr"))$("fErr").onclick=()=>{fQuizStart(f,f.errs.filter(i=>f.quiz[i]));render0()};
   if($("fNewQ"))$("fNewQ").onclick=()=>fRegen(f,true);
   $("fAsk").onclick=()=>{fChat=[];devMode="fask";render0()};
+  if($("fSend"))$("fSend").onclick=()=>ficheSend(f);
   $("fPr").onclick=()=>fPdf(f);bindFiche(f);
-  $("fRealB").onclick=()=>{f.real=$("fReal").value.trim();fSave(f);toast("Note enregistrée ✓");render0()};
+  $("fRealB").onclick=()=>{f.real=$("fReal").value.trim();fSave(f);const kk=nrm(f.k),c=cagOf(kk)||cagLoadLocal(kk),n=cagParseNote(f.real);if(c&&c.on&&c.rules[cagMk(f.m)]&&!isNaN(n))cagRealNote(kk,f.m,f.t,n);else toast("Note enregistrée ✓");render0()};
   if($("fDel"))$("fDel").onclick=()=>{S.fiches=fiches().filter(x=>x.id!==f.id);save();devMode=null;render0()};
 }
 function _old_vQuiz(){const f=fGet(fCur);if(!f||!fQ){devMode="fiche";return vFiche()}
@@ -3920,16 +3965,18 @@ function vAdapte(){const K=kidsB();if(!K.length){devMode=null;return vDevoirs()}
 /* ===== ESPACE FAMILLE : fiches partagées, mode enfant, quiz chronométré et alertes ===== */
 const nrm=t=>String(t||"").toLowerCase().normalize("NFD").replace(/[^a-z0-9]/g,"");
 let FUN=[], famCode=null, QRES=[];
-try{const m=(location.hash||"").match(/^#e-([a-z0-9]{4,10})-([a-z0-9]{1,20})$/);if(m){S.kidMode={code:m[1],k:m[2]};S.couple=S.couple||m[1];save()}}catch(e){}
-function isKid(){return !!(S.kidMode&&S.kidMode.code)}
+try{const m=(location.hash||"").match(/^#e-([a-z0-9]{4,10})-([a-z0-9]{1,20})(?:~([A-Za-z0-9_-]+))?$/);if(m){S.kidMode={code:m[1],k:m[2]};S.couple=S.couple||m[1];save();
+  if(m[3]){try{history.replaceState(null,"",location.pathname+location.search+"#e-"+m[1]+"-"+m[2])}catch(e){}ficheImport(m[3])}}}catch(e){}
+function isKid(){return !!(S.kidMode&&(S.kidMode.code||S.kidMode.guest))}
 const kidName=()=>{if(!isKid())return "";const k=S.kidMode.k;const f=fiches().find(x=>nrm(x.k)===k);return f?f.k:k.charAt(0).toUpperCase()+k.slice(1)};
-function famCodeOf(){return isKid()?S.kidMode.code:S.couple}
+function famCodeOf(){return isKid()?(S.kidMode.code||null):S.couple}
 function famSub(){const code=famCodeOf();if(!AGDB||!code||famCode===code)return;famCode=code;FUN.forEach(u=>{try{u()}catch(e){}});FUN=[];
   const base=`couples/${code}`;
   try{FUN.push(AGDB.collection(base+"/fiches").onSnapshot(sn=>{const R=sn.docs.map(d=>d.data()).filter(x=>x&&x.id);const L=[...fiches()];
       R.forEach(r=>{const i=L.findIndex(x=>x.id===r.id);if(i<0)L.push(r);else{const sc=[...(L[i].scores||[]),...(r.scores||[])];const u=[...new Map(sc.map(x=>[x.ts,x])).values()].sort((a,b)=>a.ts-b.ts);L[i]={...L[i],...r,scores:u}}});
       S.fiches=L.sort((a,b)=>b.ts-a.ts).slice(0,60);save();if(!$("app").hidden&&tab==="devoirs"&&(!devMode||devMode==="kid"))render0()},()=>{}))}catch(e){}
-  try{FUN.push(AGDB.collection(base+"/quizres").onSnapshot(sn=>{QRES=sn.docs.map(d=>d.data()).filter(x=>x&&x.ts).sort((a,b)=>a.ts-b.ts);quizAlert()},()=>{}))}catch(e){}}
+  try{FUN.push(AGDB.collection(base+"/quizres").onSnapshot(sn=>{QRES=sn.docs.map(d=>d.data()).filter(x=>x&&x.ts).sort((a,b)=>a.ts-b.ts);quizAlert()},()=>{}))}catch(e){}
+  cagSub();kspSub();fPushPending()}
 async function fShare(f){const code=famCodeOf();if(!AGDB||!code)return;try{await AGDB.collection(`couples/${code}/fiches`).doc(f.id).set(JSON.parse(JSON.stringify(f)))}catch(e){}}
 function quizAlert(){if(isKid())return;const seen=S.qSeen||0;const nw=QRES.filter(r=>r.ts>seen&&r.dev!==devId());if(!nw.length)return;
   S.qSeen=Math.max(...QRES.map(r=>r.ts));save();
@@ -3954,8 +4001,9 @@ async function kidLink(i){const k=kids()[i];if(!k)return;if(!S.couple){try{await
   fiches().forEach(f=>{if(nrm(f.k)===nrm(k.n))fShare(f)});
   const url=`${APP_URL}#e-${S.couple}-${nrm(k.n)}`;const msg=`Coucou ${k.n} ! Voici ton espace jusqua20sur20 🎯 : tes fiches de révision et tes défis pour viser 20/20. ${url}`;
   try{await navigator.clipboard.writeText(msg);toast("Lien copié : envoyez-le-lui par message")}catch(e){toast(url)}}
-function vKid(){const n=kidName(),L=fiches().filter(f=>nrm(f.k)===S.kidMode.k);
+function vKid(){const n=S.pseudo||kidName(),L=fiches().filter(f=>nrm(f.k)===S.kidMode.k);
   $("amain").innerHTML=`<div class="fx"><div class="lhello"><small>🎯 jusqua20sur20 · ton espace de révision</small><h2 class="h2app">Salut ${esc(n)} ! 👋</h2></div>
+   ${cagCard()}
    ${L.length?`<div class="flist">${L.map(f=>{const b=fBest(f);return `<button type="button" class="fcard" data-fid="${f.id}" style="--fc:${matColor(f.m)}"><span class="fm">${esc(f.m||"Cours")}</span><b>${esc(f.t)}</b><small>${f.d?fDays(f):"À réviser"}</small><span class="fsc">${b!=null?`Ma meilleure note : <b>${b}/20</b>`:"Quiz pas encore fait"}</span></button>`}).join("")}</div>`
     :`<div class="evn">Pas encore de fiche. Quand tes parents en préparent une à partir de ton cours, elle apparaît ici.</div>`}
    <button type="button" class="lcurve" id="kCoach" style="background:linear-gradient(135deg,#FF9E7A,#FF3B6B);margin-top:12px"><span>🧞</span><span><b>Le génie des devoirs</b><small>Il t'explique pas à pas, sans donner la réponse</small></span><span class="go">›</span></button></div>`;
@@ -3972,7 +4020,8 @@ function _old_qTimeout(f,q,why){if(fQ.fb||devMode!=="quiz")return;clearInterval(
   fQ.ans.push({q:q.q,ok:false,exp:q.type==="qcm"?`Bonne réponse : ${q.choix[q.bonne]}. ${q.explication||""}`:"Réponse attendue : "+q.attendu});render0()}
 document.addEventListener("visibilitychange",()=>{if(document.hidden&&devMode==="quiz"&&fQ&&!fQ.fb&&fQ.i<((fGet(fCur)||{}).quiz||[]).length){fQ.out=(fQ.out||0)+1;const f=fGet(fCur);qTimeout(f,f.quiz[fQ.i],"sortie")}});
 async function qPublish(f,note){const code=famCodeOf();const r={id:"r"+Date.now().toString(36),fid:f.id,k:f.k||kidName()||"Votre enfant",m:f.m||"",t:f.t||"",n:note,dur:Math.round((Date.now()-(fQ.t0||Date.now()))/1000),out:fQ.out||0,late:fQ.late||0,ts:Date.now(),dev:devId()};
-  if(AGDB&&code){try{await AGDB.collection(`couples/${code}/quizres`).doc(r.id).set(r)}catch(e){}fShare(f)}}
+  if(AGDB&&code){try{await AGDB.collection(`couples/${code}/quizres`).doc(r.id).set(r)}catch(e){}fShare(f)}
+  try{const kk=nrm(f.k||kidName()),c=cagOf(kk)||cagLoadLocal(kk),rl=c&&c.on&&c.rules[cagMk(f.m)];if(rl){const p=cagPtsOf(note,rl.obj);setTimeout(()=>toast(p?`💰 +${p} points dans ta cagnotte de ${rl.m} !`:`💰 Vise ${rl.obj}/20 pour gagner des points en ${rl.m}`),1200)}}catch(e){}}
 
 /* ===== QUIZ V2 : types variés, niveaux, combo, rejouer ses erreurs ===== */
 const QZ_SPEC=`Le quiz contient 15 questions, de l'échauffement au niveau expert, qui couvrent TOUT le cours, avec des pièges plausibles (distracteurs crédibles, confusions fréquentes, dates ou termes proches). Composition :
@@ -4026,7 +4075,7 @@ function vQuiz(){const f=fGet(fCur);if(!f||!fQ){devMode="fiche";return vFiche()}
       <small>${note>=18?"Tu es prêt pour le contrôle. Refais-le la veille pour garder le niveau.":note>=14?`Encore ${wrong.length} point${wrong.length>1?"s":""} à aller chercher : rejoue tes erreurs, puis refais le défi.`:"Relis la fiche (surtout « À retenir » et « Pièges »), rejoue tes erreurs, puis retente : ça va monter."}</small></div>
      ${wrong.length?`<button type="button" class="btn btn-rose wide" id="qErr">🔁 Rejouer mes ${wrong.length} erreur${wrong.length>1?"s":""}</button>`:""}
      ${wrong.length?`<div class="wsec"><div class="wst"><span>📝</span>À retenir de tes erreurs</div>${wrong.map(a=>`<div class="qrev"><b>${esc(a.q)}</b><p>${esc(a.exp||"")}</p></div>`).join("")}</div>`:""}
-     <div class="two"><button type="button" class="btn btn-line" id="qAgain">Refaire le défi</button><button type="button" class="btn btn-line" id="qFiche">Revoir la fiche</button></div>${!isKid()||1?`<button type="button" class="linkb" id="qNew" style="margin:12px auto 0;display:block">✨ Un nouveau défi, plus difficile</button>`:""}</div>`;
+     <div class="two"><button type="button" class="btn btn-line" id="qAgain">Refaire le défi</button><button type="button" class="btn btn-line" id="qFiche">Revoir la fiche</button></div>${!isKid()||1?`<button type="button" class="linkb" id="qNew" style="margin:12px auto 0;display:block">${lvlLabel(f)}</button>`:""}</div>`;
     $("qB").onclick=$("qFiche").onclick=()=>{devMode="fiche";render0()};
     $("qAgain").onclick=()=>{fQuizStart(f);render0()};
     if($("qErr"))$("qErr").onclick=()=>{fQuizStart(f,wrong.map(a=>a.idx));render0()};
@@ -4077,7 +4126,8 @@ Réponds UNIQUEMENT en JSON : {"points":0, 0.5 ou 1,"message":"2 phrases maximum
 async function tierOK(t){try{const l=SAMPLE&&SAMPLE.limits?await SAMPLE.limits():null;return !l||!l.modelTiers||l.modelTiers.includes(t)}catch(e){return true}}
 function busyOverlay(txt){let o=$("busyOv");if(!o){o=document.createElement("div");o.id="busyOv";o.className="busyov";document.body.appendChild(o)}
   o.innerHTML=`<div class="busybox"><span class="gorb"></span><b>${txt}</b><small>Ça prend 20 à 60 secondes. Gardez l'appli ouverte.</small><button type="button" class="linkb" id="busyX">Annuler</button></div>`;return o}
-async function fRegen(f,harder){if(!SAMPLE||!SAMPLE.json){toast("Le génie n'est pas disponible ici");return}if(devBusy)return;
+async function fRegen(f,harder){if(f.levels&&f.levels.length&&(isKid()||!SAMPLE||!SAMPLE.json)){lvlNext(f);return}
+  if(!SAMPLE||!SAMPLE.json){toast("Le génie n'est pas disponible ici");return}if(devBusy)return;
   const ctl=new AbortController();devBusy=ctl;const ov=busyOverlay(`✨ Le génie prépare un nouveau défi${harder?", plus corsé":""}…`);$("busyX").onclick=()=>{ctl.abort();ov.remove();devBusy=null};
   const opts={signal:ctl.signal,cache:false};if(await tierOK("complex"))opts.modelTier="complex";
   const fic=JSON.stringify(f.fiche||{}).slice(0,20000);
@@ -4287,6 +4337,251 @@ async function fPdf(f){const bytes=fichePDF(f);const slug=x=>String(x||"").toLow
     if(dl){await dl.save({filename:name,data:bytes});toast("PDF prêt : touchez « Imprimer » dans le menu de partage 🖨");return}}catch(e){if(e&&e.code==="declined")return}
   try{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([bytes],{type:"application/pdf"}));a.download=name;document.body.appendChild(a);a.click();a.remove();toast("PDF téléchargé : ouvrez-le pour l'imprimer 🖨")}catch(e){toast("Téléchargement impossible ici")}}
 
+/* ===== CAGNOTTE jusqua20sur20 : des points gagnés aux quiz, transformés en euros ou en cadeau ===== */
+let CAG={},cagKid=null,cagForm=null;
+const CAG_MATS=["Français","Maths","Histoire-Géo","Anglais","SVT","Physique-Chimie","Espagnol","Allemand","Technologie","Philosophie","SES"];
+function cagObjDefault(cl){const i=CLASSES.indexOf(cl);return i<0?14:i<=4?16:i<=6?15:i<=8?14:13}
+const cagMk=m=>{const k=nrm(m);if(!k)return "";if(/^math/.test(k))return "maths";if(/hist|geo/.test(k))return "histoiregeo";if(/^fran/.test(k))return "francais";if(/^angl/.test(k))return "anglais";if(/phys|chim/.test(k))return "physiquechimie";if(/^svt|vie|terre/.test(k))return "svt";if(/^esp/.test(k))return "espagnol";if(/^allem/.test(k))return "allemand";if(/^tech/.test(k))return "technologie";return k};
+const cagKey=k=>nrm(k);
+function cagOf(kk){return CAG[kk]||null}
+function cagSince(c,mk){let s=(c.rules[mk]||{}).since||0;(c.ev||[]).forEach(e=>{if(e.mk===mk&&(e.reset||e.type==="paid"))s=Math.max(s,e.ts)});return s}
+function cagPtsOf(n,obj){return n>=obj?10+Math.round((n-obj)*2):0}
+function cagQuizzes(kk,mk,since){const L=[];fiches().filter(f=>nrm(f.k)===kk&&cagMk(f.m)===mk).forEach(f=>(f.scores||[]).forEach(x=>{if(x&&x.ts>since)L.push({n:x.n,ts:x.ts,t:f.t})}));return L.sort((a,b)=>a.ts-b.ts)}
+function cagStat(c,kk,mk){const r=c.rules[mk];const since=cagSince(c,mk);const Q=mk==="defis"?[]:cagQuizzes(kk,mk,since);const pts=mk==="defis"?15*Object.values((KSP["defis_"+kk]||{}).ok||{}).filter(t=>t>since).length:Q.reduce((s,q)=>s+cagPtsOf(q.n,r.obj),0);const ratio=Math.min(1,pts/Math.max(1,r.goal));
+  const val=r.kind==="cadeau"?null:Math.floor((r.amt||0)*ratio*2)/2;const okNote=(c.ev||[]).some(e=>e.mk===mk&&e.type==="note"&&e.ts>since&&e.n>=r.obj);
+  return {pts,ratio,val,Q,won:ratio>=1,okNote}}
+async function cagSave(kk){const c=CAG[kk];if(!c)return;c.ts=Date.now();const code=famCodeOf();try{localStorage.setItem("j120cag_"+kk,JSON.stringify(c))}catch(e){}
+  if(AGDB&&code){try{await AGDB.collection(`couples/${code}/cagnotte`).doc(kk).set(JSON.parse(JSON.stringify(c)))}catch(e){toast("Cagnotte gardée sur cet appareil : la synchronisation reprendra plus tard")}}}
+function cagLoadLocal(kk){if(CAG[kk])return CAG[kk];try{const v=JSON.parse(localStorage.getItem("j120cag_"+kk)||"null");if(v)CAG[kk]=v}catch(e){}return CAG[kk]||null}
+function cagSub(){const code=famCodeOf();if(!AGDB||!code)return;try{FUN.push(AGDB.collection(`couples/${code}/cagnotte`).onSnapshot(sn=>{sn.docs.forEach(d=>{const v=d.data();if(v&&v.k){const kk=d.id;if(!CAG[kk]||(v.ts||0)>=(CAG[kk].ts||0))CAG[kk]=v}});if(!$("app").hidden&&tab==="devoirs"&&(!devMode||devMode==="cagnotte"||devMode==="kid"))render0()},()=>{}))}catch(e){}}
+function cagEnable(i){const k=kids()[i];if(!k)return;const kk=cagKey(k.n);const obj=cagObjDefault(k.cl);
+  const ms=[...new Set([...fiches().filter(f=>nrm(f.k)===kk&&f.m).map(f=>f.m),"Français","Maths","Histoire-Géo","Anglais"])];
+  const rules={};ms.forEach(m=>{const mk=cagMk(m);if(mk&&!rules[mk])rules[mk]={m:m.charAt(0).toUpperCase()+m.slice(1),obj,goal:60,amt:10,kind:"euros",gift:"",since:Date.now()}});
+  CAG[kk]={on:true,k:k.n,cl:k.cl,rules,ev:[],ts:Date.now()};cagSave(kk);cagKid=kk;devMode="cagnotte";render0()}
+/* quand une vraie note de contrôle est saisie : sous l'objectif, les points de la matière repartent à 0 */
+function cagRealNote(kk,m,ep,n,silent){const c=cagOf(kk);if(!c||!c.on)return;const mk=cagMk(m);const r=c.rules[mk];if(!r||isNaN(n))return;
+  const reset=n<r.obj;c.ev=[...(c.ev||[]),{type:"note",mk,ep:ep||"",n,ts:Date.now(),reset}];cagSave(kk);
+  if(!silent)toast(reset?`Note sous l'objectif de ${r.obj}/20 : les points de ${r.m} repartent à 0`:`Objectif tenu en ${r.m} ✓`)}
+function cagParseNote(v){const m=String(v||"").replace(",",".").match(/(\d+(?:\.\d+)?)\s*(?:\/\s*(\d+))?/);if(!m)return NaN;const n=parseFloat(m[1]),d=m[2]?parseFloat(m[2]):20;return d?Math.round(n/d*20*2)/2:NaN}
+function cagCard(){if(isKid()){const kk=S.kidMode.k;const c=cagLoadLocal(kk);if(!c||!c.on)return "";
+    const mks=Object.keys(c.rules);const tot=mks.reduce((s,mk)=>s+(cagStat(c,kk,mk).val||0),0);const gifts=mks.filter(mk=>c.rules[mk].kind==="cadeau");
+    return `<button type="button" class="cagc" data-cag="${kk}"><span class="cage">💰</span><span><b>Ma cagnotte</b><small>${tot?`${fmtEur(tot)} déjà gagnés`:"Réussis tes quiz pour gagner des points"}${gifts.length?` · ${gifts.length} cadeau${gifts.length>1?"x":""} à décrocher`:""}</small></span><span class="go">›</span></button>`}
+  const K=kids();if(!K.length)return "";
+  return `<div class="cagbox"><b>💰 La cagnotte jusqua20sur20</b><small>Votre enfant gagne des points à chaque quiz réussi ; vous fixez par matière la note à viser et ce qu'il gagne (euros ou cadeau). Si sa vraie note de contrôle est sous l'objectif, les points de la matière repartent à 0.</small>
+   <div class="chips">${K.map((k,i)=>{const c=cagOf(cagKey(k.n))||cagLoadLocal(cagKey(k.n));return c&&c.on?`<button type="button" class="chip on" data-cag="${cagKey(k.n)}">💰 Cagnotte de ${esc(k.n)}</button>`:`<button type="button" class="chip" data-cagon="${i}">＋ Activer pour ${esc(k.n)}</button>`}).join("")}</div></div>`}
+const fmtEur=v=>(Math.round(v*100)/100).toLocaleString("fr-FR",{minimumFractionDigits:v%1?2:0,maximumFractionDigits:2})+" €";
+function bindCag(root){(root||$("amain")).querySelectorAll("[data-cag]").forEach(b=>b.onclick=()=>{cagKid=b.dataset.cag;cagForm=null;devMode="cagnotte";render0()});
+  (root||$("amain")).querySelectorAll("[data-cagon]").forEach(b=>b.onclick=()=>cagEnable(+b.dataset.cagon))}
+function vCagnotte(){const kid=isKid();const kk=kid?S.kidMode.k:cagKid;const c=cagLoadLocal(kk);
+  if(!c){devMode=null;return render0()}
+  const mks=Object.keys(c.rules);const ST=Object.fromEntries(mks.map(mk=>[mk,cagStat(c,kk,mk)]));const tot=mks.reduce((s,mk)=>s+(ST[mk].val||0),0);
+  const row=mk=>{const r=c.rules[mk],s=ST[mk];return `<div class="cagm" style="--fc:${matColor(r.m)}">
+     <div class="cagmh"><b>${esc(r.m)}</b><span>${r.kind==="cadeau"?`🎁 ${esc(r.gift||"Cadeau")}`:`${fmtEur(s.val||0)} <small>/ ${fmtEur(r.amt||0)}</small>`}</span></div>
+     <div class="cagbar"><i style="width:${Math.round(s.ratio*100)}%"></i></div>
+     <small>${s.pts} / ${r.goal} points · objectif ${r.obj}/20 par quiz${s.won?(s.okNote?" · 🏆 Gagné et confirmé par le contrôle !":" · 🏆 Objectif de points atteint, en attente de la note du contrôle"):""}</small>
+     ${(c.ev||[]).filter(e=>e.mk===mk&&e.type==="note").slice(-2).map(e=>`<small class="cagev ${e.reset?"bad":"ok"}">${e.reset?"↺":"✓"} Contrôle${e.ep?" « "+esc(e.ep)+" »":""} : ${e.n}/20${e.reset?" · points remis à 0":""}</small>`).join("")}
+     ${!kid?`<div class="cagact"><button type="button" class="linkb" data-cedit="${mk}">Régler</button><button type="button" class="linkb" data-cnote="${mk}">📝 Note EcoleDirecte</button>${s.won?`<button type="button" class="linkb" data-cpaid="${mk}">✓ Récompense remise</button>`:""}</div>`:""}
+     ${!kid&&cagForm&&cagForm.mk===mk?cagFormHTML(c,mk):""}</div>`};
+  $("amain").innerHTML=`<div class="fx"><div class="gtop"><button type="button" class="iconbtn" id="cgBack" aria-label="Retour"><svg class="i"><use href="#i-back"/></svg></button><h2>💰 ${kid?"Ma cagnotte":"Cagnotte de "+esc(c.k)}</h2></div>
+   <div class="cagtot"><small>${kid?"Déjà gagné":"Gagné à ce jour"}</small><b>${fmtEur(tot)}</b>${mks.some(mk=>c.rules[mk].kind==="cadeau")?`<small>+ ${mks.filter(mk=>c.rules[mk].kind==="cadeau").map(mk=>esc(c.rules[mk].gift||"un cadeau")).join(", ")} à décrocher</small>`:""}</div>
+   <div class="cagrules"><b>${kid?"Comment ça marche":"La règle du jeu"}</b><ul><li>Chaque quiz réussi (à l'objectif ou plus) rapporte <b>10 points</b>, et <b>+2 points</b> par point au-dessus de l'objectif.</li><li>Les points se transforment en ${mks.every(mk=>c.rules[mk].kind==="cadeau")?"cadeau":"euros"} au fur et à mesure.</li><li>⚠️ Si la <b>vraie note du contrôle</b> (EcoleDirecte) est sous l'objectif, les points de la matière <b>repartent à 0</b>.</li></ul></div>
+   ${mks.map(row).join("")}
+   ${!kid?`<div class="cagadd"><select id="cgAddM" aria-label="Ajouter une matière"><option value="">＋ Ajouter une matière</option>${CAG_MATS.filter(m=>!c.rules[cagMk(m)]).map(m=>`<option>${m}</option>`).join("")}</select></div>
+    <p class="disc">EcoleDirecte ne permet pas de récupérer les notes automatiquement : saisissez la note du contrôle avec « 📝 Note EcoleDirecte », ou sur la fiche du chapitre (« Note obtenue au vrai contrôle »).</p>
+    <button type="button" class="linkb" id="cgOff" style="display:block;margin:14px auto">Désactiver la cagnotte de ${esc(c.k)}</button>`:""}</div>`;
+  $("cgBack").onclick=()=>{devMode=null;cagForm=null;render0()};
+  if(kid)return;
+  const A=$("amain");
+  A.querySelectorAll("[data-cedit]").forEach(b=>b.onclick=()=>{cagForm=cagForm&&cagForm.mk===b.dataset.cedit&&cagForm.t==="edit"?null:{mk:b.dataset.cedit,t:"edit"};render0()});
+  A.querySelectorAll("[data-cnote]").forEach(b=>b.onclick=()=>{cagForm=cagForm&&cagForm.mk===b.dataset.cnote&&cagForm.t==="note"?null:{mk:b.dataset.cnote,t:"note"};render0()});
+  A.querySelectorAll("[data-cpaid]").forEach(b=>b.onclick=()=>{const mk=b.dataset.cpaid,r=c.rules[mk],s=ST[mk];c.ev=[...(c.ev||[]),{type:"paid",mk,ts:Date.now(),val:s.val,gift:r.kind==="cadeau"?r.gift:""}];cagSave(kk);toast("Bravo à "+c.k+" ! Une nouvelle manche commence en "+r.m);render0()});
+  $("cgAddM").onchange=e=>{const m=e.target.value;if(!m)return;const mk=cagMk(m);c.rules[mk]={m,obj:cagObjDefault(c.cl),goal:60,amt:10,kind:"euros",gift:"",since:Date.now()};cagSave(kk);cagForm={mk,t:"edit"};render0()};
+  $("cgOff").onclick=()=>{c.on=false;cagSave(kk);devMode=null;toast("Cagnotte désactivée");render0()};
+  const f=$("cgForm");if(f)f.onsubmit=e=>{e.preventDefault();const mk=cagForm.mk,r=c.rules[mk];
+    if(cagForm.t==="edit"){r.obj=Math.max(1,Math.min(20,+$("cgObj").value||r.obj));r.goal=Math.max(10,+$("cgGoal").value||r.goal);r.kind=$("cgKind").value;r.amt=Math.max(0,parseFloat(String($("cgAmt").value).replace(",","."))||0);r.gift=$("cgGift").value.trim();
+      if($("cgDel")&&$("cgDel").checked)delete c.rules[mk];cagSave(kk);toast("Règle enregistrée ✓")}
+    else{const n=cagParseNote($("cgN").value);if(isNaN(n)){toast("Indiquez la note, par exemple 14/20");return}cagRealNote(kk,r.m,$("cgEp").value.trim(),n)}
+    cagForm=null;render0()};
+  const kd=$("cgKind");if(kd)kd.onchange=()=>{$("cgAmtW").hidden=kd.value==="cadeau";$("cgGiftW").hidden=kd.value!=="cadeau"}}
+function cagFormHTML(c,mk){const r=c.rules[mk];
+  if(cagForm.t==="note")return `<form id="cgForm" class="cagform"><label class="clabel" for="cgEp">Contrôle (comme sur EcoleDirecte)</label><input id="cgEp" maxlength="60" placeholder="Ex. Contrôle chapitre 3">
+     <label class="clabel" for="cgN">Note obtenue</label><input id="cgN" inputmode="decimal" maxlength="10" placeholder="Ex. 14/20 ou 7/10">
+     <small>Objectif : ${r.obj}/20. En dessous, les points de ${esc(r.m)} repartent à 0.</small><button type="submit" class="btn btn-rose wide">Enregistrer la note</button></form>`;
+  return `<form id="cgForm" class="cagform">
+   <label class="clabel" for="cgObj">Note à viser à chaque quiz (et au contrôle)</label><select id="cgObj">${Array.from({length:11},(_,i)=>10+i).map(v=>`<option value="${v}"${v===r.obj?" selected":""}>${v}/20</option>`).join("")}</select>
+   <label class="clabel" for="cgGoal">Points pour décrocher la récompense</label><select id="cgGoal">${[30,40,60,80,100,150].map(v=>`<option value="${v}"${v===r.goal?" selected":""}>${v} points (environ ${Math.max(1,Math.round(v/14))} quiz réussis)</option>`).join("")}</select>
+   <label class="clabel" for="cgKind">Récompense</label><select id="cgKind"><option value="euros"${r.kind!=="cadeau"?" selected":""}>Des euros</option><option value="cadeau"${r.kind==="cadeau"?" selected":""}>Un cadeau</option></select>
+   <div id="cgAmtW"${r.kind==="cadeau"?" hidden":""}><label class="clabel" for="cgAmt">Somme à gagner (€)</label><input id="cgAmt" inputmode="decimal" value="${r.amt||0}"></div>
+   <div id="cgGiftW"${r.kind!=="cadeau"?" hidden":""}><label class="clabel" for="cgGift">Le cadeau</label><input id="cgGift" maxlength="60" placeholder="Ex. une sortie au laser game" value="${esc(r.gift||"")}"></div>
+   <label class="cagdel"><input type="checkbox" id="cgDel"> Retirer cette matière</label>
+   <button type="submit" class="btn btn-rose wide">Enregistrer</button></form>`}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-cag],[data-cagon]");if(!b||!$("amain").contains(b))return;if(b.dataset.cagon!=null){cagEnable(+b.dataset.cagon);return}cagKid=b.dataset.cag;cagForm=null;devMode="cagnotte";render0()});
+/* ===== 3 niveaux de quiz préparés avec Claude avant l'envoi : l'enfant monte la difficulté seul ===== */
+const LVLN=["Échauffement","Costaud","Expert"];
+function lvlLabel(f){if(f.levels&&f.levels.length){const i=f.lvl||0;return i<f.levels.length-1?`🔥 Niveau suivant : ${LVLN[i+1]||"Expert"} (${i+2}/${f.levels.length})`:`🏆 Niveau ${LVLN[i]||"Expert"} : refais-le pour viser 20/20`}return "✨ Un nouveau défi, plus difficile"}
+function lvlNext(f){const i=f.lvl||0,last=(f.scores||[]).slice(-1)[0];
+  if(i>=f.levels.length-1){fQuizStart(f);render0();toast("Tu es au niveau Expert : vise 20/20 ! 🏆");return}
+  if(!last||last.n<12){toast("Atteins au moins 12/20 à ce niveau pour débloquer le suivant 💪");return}
+  f.lvl=i+1;f.quiz=f.levels[f.lvl].map(normQ);f.errs=[];fSave(f);fQuizStart(f);render0();$("amain").scrollTop=0;toast(`Niveau ${f.lvl+1} débloqué : ${LVLN[f.lvl]} 🔥`)}
+async function qzGen(f,lv,prev,signal){const fic=JSON.stringify(f.fiche||{}).slice(0,20000);const opts={signal,cache:false};if(await tierOK("complex"))opts.modelTier="complex";
+  const lvt=lv===1?"NIVEAU 2 « Costaud » : plus difficile que le premier quiz. Surtout des questions de niveau 2 et 3, distracteurs plus fins, questions qui obligent à comprendre et à appliquer, pas seulement à réciter. ":"NIVEAU 3 « Expert » : le plus exigeant. Presque uniquement des questions de niveau 3 : synthèse, application à des cas nouveaux, pièges fins, enchaînements logiques, questions ouvertes exigeantes. C'est le niveau d'un élève qui vise 18-20/20 au contrôle. ";
+  let r=null,err=null;for(let a=0;a<2&&!r;a++){try{r=await SAMPLE.json(`Tu es un professeur qui prépare un quiz d'entraînement pour ${f.k||"un élève"}${f.cl?" de "+f.cl:""}, pour qu'il ait une excellente note au contrôle.
+Voici la fiche de révision du chapitre « ${f.t} » (${f.m}) : ${fic}
+Questions déjà posées dans les niveaux précédents (ne les répète pas, teste d'autres points ou formule autrement) : ${JSON.stringify(prev.map(q=>q.q)).slice(0,4000)}
+${lvt}${f.easy?"L'élève a des besoins particuliers : phrases courtes, vocabulaire simple, pas de piège de formulation. ":""}
+${QZ_SPEC}
+Appuie-toi uniquement sur la fiche. Réponds UNIQUEMENT avec {"quiz":[...]}.`,opts)}catch(e){err=e;if(e&&(e.code==="cancelled"||e.code==="not_granted"||e.code==="rate_limited"))break;delete opts.modelTier}}
+  if(!r)throw err||{message:"Pas de réponse du génie"};const Q=(Array.isArray(r.quiz)?r.quiz:Array.isArray(r)?r:[]).map(normQ).filter(q=>q.q);if(Q.length<5)throw {message:"Quiz incomplet"};return Q}
+async function lvlBuild(f){const ctl=new AbortController();devBusy=ctl;let stop=false;
+  const ov=busyOverlay(`✨ Claude prépare 3 niveaux de quiz pour ${esc(f.k||"votre enfant")} (Échauffement, Costaud, Expert)… environ 1 minute`);$("busyX").onclick=()=>{stop=true;ctl.abort();ov.remove();devBusy=null};
+  const L=[f.quiz];try{for(let lv=1;lv<3;lv++){if(stop)break;L.push(await qzGen(f,lv,L.flat(),ctl.signal))}}catch(e){}
+  devBusy=null;if(stop)return "cancel";try{ov.remove()}catch(e){}
+  if(L.length>1){f.levels=L;f.lvl=0;fSave(f)}else toast("Les niveaux supplémentaires n'ont pas pu être préparés : envoi avec le quiz actuel");return L.length}
+/* ===== Envoi d'une fiche (créée sur le site Claude) vers l'espace de l'enfant ===== */
+const KID_SITE="https://cyrilzirah-boop.github.io/Jusqua120ans/";
+async function gz64(str){const cs=new Blob([str]).stream().pipeThrough(new CompressionStream("gzip"));const u=new Uint8Array(await new Response(cs).arrayBuffer());let b="";for(let i=0;i<u.length;i+=0x8000)b+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(b).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}
+async function ungz64(s){const b=atob(s.replace(/-/g,"+").replace(/_/g,"/"));const u=Uint8Array.from(b,c=>c.charCodeAt(0));const ds=new Blob([u]).stream().pipeThrough(new DecompressionStream("gzip"));return await new Response(ds).text()}
+async function ficheSend(f){if(!S.couple){try{await agCreate()}catch(e){}}if(!S.couple){toast("Activez d'abord l'espace à deux dans « Agenda »");return}
+  if(!(f.levels&&f.levels.length>=3)&&SAMPLE&&SAMPLE.json&&!devBusy){const ok=await lvlBuild(f);if(ok==="cancel")return}
+  const {scores,learned,errs,real,pend,...core}=f;let pl;try{pl=await gz64(JSON.stringify(core))}catch(e){toast("Votre navigateur ne peut pas préparer l'envoi");return}
+  const url=`${KID_SITE}#e-${S.couple}-${nrm(f.k)}~${pl}`;const msg=`${f.k}, ta fiche de révision « ${f.t} » et son quiz chronométré t'attendent 🎯 ${url}`;
+  try{if(navigator.share){await navigator.share({text:msg});toast("Fiche envoyée ✓");return}}catch(e){if(e&&e.name==="AbortError")return}
+  try{await navigator.clipboard.writeText(msg);toast(`Message copié : collez-le dans WhatsApp ou Messages pour ${f.k}`)}catch(e){prompt("Copiez ce message pour "+f.k,msg)}}
+async function ficheImport(pl){try{const f=JSON.parse(await ungz64(pl));if(!f||!f.id||!f.quiz)return;const L=[...fiches()];const i=L.findIndex(x=>x.id===f.id);
+    if(f.levels&&f.levels.length){f.lvl=0;f.quiz=f.levels[0]}if(i<0)L.unshift({...f,scores:[],learned:[],pend:1});else L[i]={...L[i],...f,scores:L[i].scores||[],pend:1};S.fiches=L.slice(0,60);save();fPushPending();
+    toast("📚 Nouvelle fiche : "+f.t);if(!$("app").hidden&&tab==="devoirs")render0()}catch(e){toast("Ce lien de fiche est incomplet : demande à tes parents de le renvoyer")}}
+function fPushPending(){if(typeof AGDB==="undefined"||!AGDB||!famCodeOf())return;fiches().filter(f=>f.pend).forEach(f=>{delete f.pend;fShare(f)});save()}
+/* ===== ESPACE JEUNE jusqua20sur20 : réviser, sorties, jeux, défis, potes (sur invitation, sous l'œil des parents) ===== */
+const KTABS=[["devoirs","🎯","Réviser"],["ksort","☀️","Sorties"],["kjeux","🎲","Jeux"],["kdefi","🏆","Défis"],["kpotes","👥","Potes"]];
+const kKey=()=>S.kidMode&&S.kidMode.k||"";
+const kName=()=>S.pseudo||kidName()||"Moi";
+const wkKey=(t)=>{const d=new Date(t||Date.now());const j=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));const n=j.getUTCDay()||7;j.setUTCDate(j.getUTCDate()+4-n);const y=new Date(Date.UTC(j.getUTCFullYear(),0,1));return j.getUTCFullYear()+"-S"+String(Math.ceil(((j-y)/864e5+1)/7)).padStart(2,"0")};
+const rid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+let KSP={},CREW={info:null,mem:[],sor:[]},crewUn=[],kGame=null,kSortSel=null;
+/* --- abonnements --- */
+function kspSub(){const code=famCodeOf();if(!AGDB||!code)return;try{FUN.push(AGDB.collection(`couples/${code}/kidspace`).onSnapshot(sn=>{KSP={};sn.docs.forEach(d=>{KSP[d.id]=d.data()});kRefresh()},()=>{}))}catch(e){}}
+function crewSub(){crewUn.forEach(u=>{try{u()}catch(e){}});crewUn=[];if(!AGDB||!S.crew)return;const b=`couples/${S.crew}`;
+  try{crewUn.push(AGDB.collection(b+"/membres").onSnapshot(sn=>{CREW.mem=sn.docs.map(d=>d.data()).filter(Boolean);kRefresh()},()=>{}))}catch(e){}
+  try{crewUn.push(AGDB.collection(b+"/sorties").onSnapshot(sn=>{CREW.sor=sn.docs.map(d=>d.data()).filter(x=>x&&x.id).sort((a,c)=>(a.date||"").localeCompare(c.date||""));kRefresh()},()=>{}))}catch(e){}
+  try{AGDB.collection(b+"/membres").doc(devId()).set({id:devId(),n:kName(),ts:Date.now()})}catch(e){}}
+function kRefresh(){if($("app").hidden)return;if(["kpotes","kdefi","ksort"].includes(tab)||(tab==="devoirs"&&!devMode&&!isKid()))render0()}
+async function kspSet(id,v){const code=famCodeOf();KSP[id]=v;if(AGDB&&code){try{await AGDB.collection(`couples/${code}/kidspace`).doc(id).set(JSON.parse(JSON.stringify(v)))}catch(e){toast("Pas de connexion : réessaie dans un instant")}}else toast("Connecte-toi pour que tes parents le voient")}
+/* --- invitation des potes : lien #p-code --- */
+try{const m=(location.hash||"").match(/^#p-([a-z0-9]{6,10})$/);if(m){S.crew=m[1];if(!isKid())S.kidMode={code:"",k:"pote",guest:1};save();try{history.replaceState(null,"",location.pathname+location.search+"#app")}catch(e){}
+  setTimeout(()=>{try{openApp("kpotes")}catch(e){}},300)}}catch(e){}
+/* --- DÉFIS --- */
+const KDEFIS=[["🏃","30 minutes de sport ou de vélo","sport"],["📚","Lire 20 pages d'un livre (pas un écran)","lecture"],["🧹","Ranger ta chambre à fond, sans qu'on te le demande","maison"],["🍳","Préparer un repas ou un dessert pour la famille","maison"],["📵","Une soirée sans écran après 21 h","ecran"],["🤝","Rendre un vrai service à quelqu'un de la famille","entraide"],["🧠","Réviser 15 minutes d'avance pour un contrôle","ecole"],["🗣️","Apprendre 10 mots d'anglais et les réciter","ecole"],["🌳","Une sortie dehors d'une heure (balade, parc, vélo)","sport"],["🎨","Créer quelque chose : dessin, musique, vidéo, maquette","creatif"],["📞","Appeler un grand-parent ou un proche","entraide"],["🛒","Faire une course seul(e) avec une liste et l'argent exact","autonomie"],["⏰","Te lever à l'heure tous les jours de la semaine sans rappel","autonomie"],["🧺","Plier et ranger ton linge","maison"],["🎯","Finir tous tes devoirs avant 19 h deux jours de suite","ecole"],["💪","50 pompes ou abdos dans la journée, en plusieurs fois","sport"],["📝","Écrire une page sur ta semaine ou une idée qui te tient à cœur","creatif"],["🌱","Arroser les plantes ou t'occuper d'un animal toute la semaine","maison"],["🎲","Proposer un jeu de société en famille","entraide"],["🚲","Aller quelque part à pied ou à vélo au lieu d'être emmené(e)","autonomie"]];
+function kWeekPicks(kk){const w=wkKey();let h=0;for(const c of w+kk)h=(h*31+c.charCodeAt(0))>>>0;const idx=[...KDEFIS.keys()];const out=[];while(out.length<4){h=(h*1103515245+12345)>>>0;const i=idx.splice(h%idx.length,1)[0];out.push(i)}return out}
+function kDefDoc(kk){return KSP["defis_"+kk]||{kk,k:kidName()||kk,done:{},ok:{}}}
+function vKDefi(){const kk=kKey(),d=kDefDoc(kk),P=kWeekPicks(kk),w=wkKey();const key=i=>w+"_"+i;
+  const nOk=Object.keys(d.ok||{}).length;
+  $("amain").innerHTML=`<div class="fx"><div class="lhello"><small>🏆 Cette semaine</small><h2 class="h2app">Tes 4 défis</h2></div>
+   <p class="disc" style="margin:0 0 12px">Fais-les quand tu veux d'ici dimanche. Coche ceux que tu as faits : tes parents valident, et chaque défi validé rapporte <b>15 points</b>${famCodeOf()?" à ta cagnotte":""}.</p>
+   <div class="kdefs">${P.map(i=>{const[e,t]=KDEFIS[i];const k=key(i),ok=d.ok&&d.ok[k],dn=d.done&&d.done[k];return `<div class="kdef ${ok?"ok":dn?"dn":""}"><span class="kde">${e}</span><span class="kdt">${esc(t)}<small>${ok?"✅ Validé par tes parents : +15 points":dn?"⏳ En attente de validation":"À faire"}</small></span>${ok?"":`<button type="button" class="btn ${dn?"btn-line":"btn-rose"}" data-kdone="${k}">${dn?"Annuler":"Fait !"}</button>`}</div>`}).join("")}</div>
+   <div class="kbadges"><b>Mes badges</b><div>${kBadges(nOk).map(([e,t,on])=>`<span class="kbadge${on?" on":""}" title="${esc(t)}">${e}<small>${esc(t)}</small></span>`).join("")}</div></div></div>`;
+  $("amain").querySelectorAll("[data-kdone]").forEach(b=>b.onclick=()=>{const k=b.dataset.kdone,doc={...d,done:{...(d.done||{})}};if(doc.done[k])delete doc.done[k];else doc.done[k]=Date.now();kspSet("defis_"+kk,doc);render0();if(doc.done[k])toast("Bravo ! Tes parents vont valider 💪")})}
+function kBadges(n){const q=fiches().filter(f=>nrm(f.k)===kKey()).flatMap(f=>f.scores||[]);const best=q.reduce((m,x)=>Math.max(m,x.n),0);
+  return [["🌱","1er défi",n>=1],["🔥","5 défis",n>=5],["🏅","15 défis",n>=15],["👑","30 défis",n>=30],["🎯","1er quiz",q.length>=1],["⭐","16/20 ou plus",best>=16],["💯","20/20",best>=20],["📚","10 quiz",q.length>=10]]}
+/* --- SORTIES --- */
+const KSORT=[["🎳","Bowling entre potes","Partout","Une partie ou deux, on se défie au score.","€€"],["🔫","Laser game","Partout","Le classique pour se dépenser en équipe.","€€"],["🔐","Escape game","Partout","Une heure pour sortir, en bande de 3 à 6.","€€€"],["🌲","Accrobranche","Autour de la ville","Parcours dans les arbres, sensations garanties.","€€"],["🤸","Trampoline park","Partout","Sauts, saltos et dodgeball sur trampolines.","€€"],["⛸️","Patinoire","Partout","Glisse, musique et chocolat chaud.","€"],["🎬","Ciné entre potes","Partout","Le film du moment, séance de l'après-midi.","€"],["🛹","Skatepark","Partout","Skate, trottinette ou roller, gratuit.","Gratuit"],["🏊","Piscine ou centre aquatique","Partout","Toboggans et plongeoirs.","€"],["⚽","Foot à 5","Partout","Un terrain réservé une heure.","€€"],["🏎️","Karting","Autour de la ville","Course entre amis, casque obligatoire.","€€€"],["🔬","Musée des sciences","En ville","Expériences et expos à manipuler.","€"],["🧗","Escalade en salle (bloc)","Partout","Grimper en sécurité, sans corde.","€€"],["🎮","Salle d'arcade ou VR","En ville","Jeux d'arcade ou réalité virtuelle.","€€"],["🧺","Pique-nique au parc","Dehors","Chacun apporte quelque chose.","Gratuit"],["🚴","Balade à vélo","Dehors","Un itinéraire tranquille et une glace à l'arrivée.","Gratuit"]];
+function kAffItems(){const c=curCity();const L=(c&&AFFD[c])||[];const t=new Date().toISOString().slice(0,10);
+  return L.filter(x=>["expo","concert","cinema","evenement","sortie"].includes(x.type)&&(!x.du||x.du<=t)&&(!x.au||x.au>=t)).slice(0,8)}
+function vKSort(){const A=kAffItems(),fam=!!famCodeOf();
+  const card=(e,t,l,d,p,i)=>`<div class="ksc"><span class="kse">${e}</span><div class="ksb"><b>${esc(t)}</b><small>${esc(l)}${p?" · "+esc(p):""}</small><p>${esc(d)}</p>
+     <div class="ksa">${S.crew?`<button type="button" class="chip" data-kprop="${i}" data-to="crew">👥 Proposer à mes potes</button>`:""}${fam?`<button type="button" class="chip" data-kprop="${i}" data-to="fam">👨‍👩‍👦 Proposer à la famille</button>`:""}</div>
+     ${kSortSel&&kSortSel.i===i?kPropForm():""}</div></div>`;
+  const all=[...KSORT.map(x=>({e:x[0],t:x[1],l:x[2],d:x[3],p:x[4]})),...A.map(x=>({e:x.type==="concert"?"🎵":x.type==="expo"?"🖼️":"✨",t:x.titre,l:x.lieu||"",d:(x.resume||"").slice(0,140),p:x.prix||""}))];
+  window.__kall=all;
+  $("amain").innerHTML=`<div class="fx"><div class="lhello"><small>☀️ ${esc(cityLabel())}</small><h2 class="h2app">On sort ?</h2></div>
+   ${!S.crew?`<button type="button" class="ldev" id="kGoP"><span>👥</span><span><b>Crée ta bande de potes</b><small>Invite tes copains pour organiser des sorties ensemble</small></span></button>`:""}
+   <h3 class="lsub">Idées entre potes</h3>${all.slice(0,KSORT.length).map((x,i)=>card(x.e,x.t,x.l,x.d,x.p,i)).join("")}
+   ${A.length?`<h3 class="lsub">En ce moment près de chez toi</h3>${all.slice(KSORT.length).map((x,j)=>card(x.e,x.t,x.l,x.d,x.p,KSORT.length+j)).join("")}`:""}
+   <p class="disc">Une sortie se fait toujours avec l'accord de tes parents : ils voient tes propositions et peuvent dire oui ou non.</p></div>`;
+  const A2=$("amain");if($("kGoP"))$("kGoP").onclick=()=>{tab="kpotes";render()};
+  A2.querySelectorAll("[data-kprop]").forEach(b=>b.onclick=()=>{const i=+b.dataset.kprop;kSortSel=kSortSel&&kSortSel.i===i&&kSortSel.to===b.dataset.to?null:{i,to:b.dataset.to};render0()});
+  const f=$("kPF");if(f)f.onsubmit=e=>{e.preventDefault();const x=all[kSortSel.i];kPropose({t:x.t,l:x.l,e:x.e},$("kPD").value,$("kPH").value,kSortSel.to);kSortSel=null;render0()}}
+function kPropForm(){const d=new Date();d.setDate(d.getDate()+((6-d.getDay()+7)%7||7));return `<form id="kPF" class="kpf"><label class="clabel" for="kPD">Quel jour ?</label><input id="kPD" type="date" value="${d.toISOString().slice(0,10)}" min="${new Date().toISOString().slice(0,10)}">
+   <label class="clabel" for="kPH">À quelle heure ?</label><select id="kPH">${["10:00","14:00","15:00","16:00","18:00"].map(h=>`<option>${h}</option>`).join("")}</select>
+   <button type="submit" class="btn btn-rose wide">${kSortSel.to==="crew"?"Envoyer à mes potes":"Envoyer à mes parents"}</button></form>`}
+async function kPropose(x,date,h,to){const id=rid();const s={id,t:x.t,l:x.l,e:x.e,date,h,by:devId(),byN:kName(),ts:Date.now(),rsvp:{[devId()]:"oui"},rn:{[devId()]:kName()}};
+  if(to==="crew"){if(!AGDB||!S.crew){toast("Connecte-toi pour inviter tes potes");return}try{await AGDB.collection(`couples/${S.crew}/sorties`).doc(id).set(s);toast("Proposé à ta bande 👥")}catch(e){toast("Envoi impossible, réessaie")}}
+  if(famCodeOf())kspSet("sortie_"+id,{id,kk:kKey(),k:kidName()||kName(),t:x.t,l:x.l,e:x.e,date,h,crew:to==="crew",status:"attente",ts:Date.now()});
+  if(to==="fam")toast("Envoyé à tes parents 👨‍👩‍👦")}
+/* --- POTES --- */
+function vKPotes(){const logged=!!AGDB;
+  if(!logged){$("amain").innerHTML=`<div class="fx"><div class="lhello"><small>👥 Ta bande</small><h2 class="h2app">Tes potes</h2></div><div class="evn">Connecte-toi avec ton adresse e-mail pour retrouver ta bande et organiser des sorties.<br><button type="button" class="btn btn-rose" data-jxlogin="1" style="margin-top:12px">🔐 Me connecter</button></div></div>`;return}
+  if(!S.pseudo&&!kidName()){$("amain").innerHTML=`<div class="fx"><div class="lhello"><small>👥 Bienvenue</small><h2 class="h2app">Comment tu t'appelles ?</h2></div><form id="kPs" class="kpf"><input id="kPsn" maxlength="20" placeholder="Ton prénom" autocomplete="given-name"><button type="submit" class="btn btn-rose wide">C'est moi</button></form></div>`;
+    $("kPs").onsubmit=e=>{e.preventDefault();const n=$("kPsn").value.trim();if(!n)return;S.pseudo=n;save();crewSub();render0()};return}
+  if(!S.crew){$("amain").innerHTML=`<div class="fx"><div class="lhello"><small>👥 Ta bande</small><h2 class="h2app">Crée ta bande</h2></div>
+     <p class="disc">Une bande, c'est toi et les copains que tu invites (8 maximum). Vous vous proposez des sorties et chacun dit s'il vient. Personne d'autre ne peut vous voir.</p>
+     <button type="button" class="btn btn-rose wide" id="kNewC">👥 Créer ma bande</button></div>`;
+    $("kNewC").onclick=()=>{S.crew=Math.random().toString(36).slice(2,10).replace(/[^a-z0-9]/g,"x").padEnd(8,"x");save();crewSub();render0()};return}
+  const me=devId(),S2=CREW.sor.filter(s=>!s.date||s.date>=new Date().toISOString().slice(0,10));
+  $("amain").innerHTML=`<div class="fx"><div class="lhello"><small>👥 Ta bande · ${CREW.mem.length||1} membre${CREW.mem.length>1?"s":""}</small><h2 class="h2app">Tes potes</h2></div>
+   <div class="kmem">${(CREW.mem.length?CREW.mem:[{id:me,n:kName()}]).map(m=>`<span class="kmb${m.id===me?" me":""}"><i>${esc((m.n||"?").charAt(0).toUpperCase())}</i><small>${esc(m.n||"?")}${m.id===me?" (toi)":""}</small></span>`).join("")}</div>
+   <button type="button" class="btn btn-rose wide" id="kInv">📨 Inviter un copain</button>
+   <p class="disc" style="text-align:center">Envoie le lien seulement à des copains que tu connais en vrai.</p>
+   <h3 class="lsub">Sorties prévues</h3>
+   ${S2.length?S2.map(s=>{const mine=s.rsvp&&s.rsvp[me];const yes=Object.entries(s.rsvp||{}).filter(([,v])=>v==="oui").map(([k])=>(s.rn||{})[k]||"?");const pm=KSP["sortie_"+s.id];
+     return `<div class="ksc"><span class="kse">${s.e||"✨"}</span><div class="ksb"><b>${esc(s.t)}</b><small>${esc(fmtDay(s.date))} · ${esc(s.h||"")} · proposé par ${esc(s.byN||"?")}</small>
+      <p>✅ ${yes.length} : ${esc(yes.join(", "))}</p>${pm?`<small class="kst ${pm.status}">${pm.status==="ok"?"👍 Tes parents ont dit oui":pm.status==="non"?"✋ Tes parents ont dit non":"⏳ En attente de l'accord de tes parents"}</small>`:famCodeOf()?`<small class="kst">Pense à prévenir tes parents</small>`:`<small class="kst">Préviens tes parents avant de dire oui</small>`}
+      <div class="ksa"><button type="button" class="chip${mine==="oui"?" on":""}" data-rsvp="${s.id}" data-v="oui">Je viens</button><button type="button" class="chip${mine==="non"?" on":""}" data-rsvp="${s.id}" data-v="non">Pas dispo</button></div></div></div>`}).join("")
+     :`<div class="evn">Pas encore de sortie. Va dans ☀️ Sorties et propose une idée à ta bande !</div>`}
+   <button type="button" class="linkb" id="kLeave" style="display:block;margin:18px auto">Quitter cette bande</button></div>`;
+  $("kInv").onclick=async()=>{const url=`${location.href.includes("github.io")?location.origin+location.pathname:KID_SITE}#p-${S.crew}`;const msg=`${kName()} t'invite dans sa bande sur jusqua20sur20 pour organiser des sorties 👥 ${url}`;
+    try{if(navigator.share){await navigator.share({text:msg});return}}catch(e){if(e&&e.name==="AbortError")return}try{await navigator.clipboard.writeText(msg);toast("Lien copié : envoie-le à ton copain")}catch(e){prompt("Copie ce message",msg)}};
+  $("amain").querySelectorAll("[data-rsvp]").forEach(b=>b.onclick=async()=>{const s=CREW.sor.find(x=>x.id===b.dataset.rsvp);if(!s)return;const v={...s,rsvp:{...(s.rsvp||{}),[me]:b.dataset.v},rn:{...(s.rn||{}),[me]:kName()}};
+    try{await AGDB.collection(`couples/${S.crew}/sorties`).doc(s.id).set(v)}catch(e){}
+    if(b.dataset.v==="oui"&&famCodeOf()&&!KSP["sortie_"+s.id])kspSet("sortie_"+s.id,{id:s.id,kk:kKey(),k:kidName()||kName(),t:s.t,l:s.l,e:s.e,date:s.date,h:s.h,crew:true,status:"attente",ts:Date.now()});render0()});
+  $("kLeave").onclick=()=>{if(!confirm("Quitter cette bande ?"))return;S.crew=null;save();crewSub();CREW={info:null,mem:[],sor:[]};render0()}}
+const fmtDay=d=>{try{return new Date(d+"T12:00").toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"})}catch(e){return d||""}};
+/* --- JEUX --- */
+const KMOTS=["avion","balle","bijou","boire","bulle","cadre","calme","carte","chaud","chien","clown","coeur","corde","danse","douce","drole","ecole","faire","fleur","foret","frais","froid","fruit","glace","grand","herbe","hiver","jaune","jouer","juste","lampe","lapin","livre","lourd","lundi","magie","merci","monde","neige","noire","nuage","ocean","ombre","orage","pomme","porte","prise","radio","rapid","reine","rever","robot","rouge","sable","salut","score","sport","sucre","table","tigre","train","verte","video","ville","vivre","zebre","pizza","crepe","joker","tenue","plage","piano","metro","bravo","stade","manga","pixel","drone","rugby","tchat"];
+const KQUI=["Un pompier","Spider-Man","Un pingouin","La tour Eiffel","Un pirate","Mario","Une girafe","Harry Potter","Un astronaute","Un dinosaure","Pikachu","Un chef cuisinier","Batman","Un dauphin","Une sorcière","Le Père Noël","Un vampire","Shrek","Un footballeur","Une licorne","Un robot","Dark Vador","Un détective","Un kangourou","Elsa (La Reine des neiges)","Un magicien","Un requin","Sonic","Un chevalier","Une momie","Un médecin","Iron Man","Un éléphant","Un youtubeur","Une fusée","Astérix","Un zombie","Un professeur","Un panda","Un ninja"];
+function vKJeux(){if(kGame==="mot")return vKMot();if(kGame==="calc")return vKCalc();if(kGame==="qui")return vKQui();
+  const R=S.krec||{};
+  $("amain").innerHTML=`<div class="fx"><div class="lhello"><small>🎲 Jeux</small><h2 class="h2app">On joue ?</h2></div>
+   <div class="kgames">
+    <button type="button" class="kgame" data-kg="mot"><span>🔤</span><b>Le mot mystère</b><small>Trouve le mot de 5 lettres en 6 essais.${R.mot?` Record : ${R.mot} victoire${R.mot>1?"s":""}`:""}</small></button>
+    <button type="button" class="kgame" data-kg="calc"><span>⚡</span><b>Calcul éclair</b><small>Un maximum de calculs en 60 secondes.${R.calc?` Record : ${R.calc}`:""}</small></button>
+    <button type="button" class="kgame" data-kg="qui"><span>🎭</span><b>Qui suis-je ?</b><small>À plusieurs : le téléphone sur le front, les autres font deviner.</small></button>
+   </div></div>`;
+  $("amain").querySelectorAll("[data-kg]").forEach(b=>b.onclick=()=>{kGame=b.dataset.kg;kGS=null;render0()})}
+let kGS=null;
+function kBack(){return `<div class="gtop"><button type="button" class="iconbtn" id="kgB" aria-label="Retour"><svg class="i"><use href="#i-back"/></svg></button><h2>${kGame==="mot"?"🔤 Le mot mystère":kGame==="calc"?"⚡ Calcul éclair":"🎭 Qui suis-je ?"}</h2></div>`}
+function kBind(){$("kgB").onclick=()=>{clearInterval(kGS&&kGS.iv);kGame=null;kGS=null;render0()}}
+function kRec(k,v,max){S.krec=S.krec||{};if(max?v>(S.krec[k]||0):true){S.krec[k]=max?v:(S.krec[k]||0)+v;save()}}
+function vKMot(){if(!kGS)kGS={w:KMOTS[Math.floor(Math.random()*KMOTS.length)].toUpperCase(),g:[],cur:"",end:0};const G=kGS;
+  const col=(g,i)=>{const w=G.w;if(g[i]===w[i])return "ok";const rest=[...w].filter((c,j)=>g[j]!==w[j]);const used=[...g].slice(0,i).filter((c,j)=>c===g[i]&&g[j]!==w[j]).length;return rest.filter(c=>c===g[i]).length>used?"mid":"no"};
+  const rows=[...G.g.map(g=>[...g].map((c,i)=>`<i class="${col(g,i)}">${c}</i>`).join("")),...(G.end?[]:[[...G.cur.padEnd(5," ")].map(c=>`<i class="cur">${c.trim()}</i>`).join("")])];while(rows.length<6)rows.push(`<i></i>`.repeat(5));
+  const kb=["AZERTYUIOP","QSDFGHJKLM","WXCVBN"];
+  $("amain").innerHTML=`<div class="fx">${kBack()}<div class="kmot">${rows.map(r=>`<div>${r}</div>`).join("")}</div>
+   ${G.end?`<div class="evn">${G.end===1?"🎉 Bravo ! Trouvé en "+G.g.length+" essai"+(G.g.length>1?"s":""):"😅 C'était <b>"+G.w+"</b>"}<br><button type="button" class="btn btn-rose" id="kmN" style="margin-top:10px">Nouveau mot</button></div>`
+     :`<div class="kkb">${kb.map((r,ri)=>`<div>${ri===2?`<button type="button" data-kk="ok" class="wide">OK</button>`:""}${[...r].map(c=>`<button type="button" data-kk="${c}">${c}</button>`).join("")}${ri===2?`<button type="button" data-kk="del" class="wide">⌫</button>`:""}</div>`).join("")}</div>`}</div>`;
+  kBind();if($("kmN"))$("kmN").onclick=()=>{kGS=null;render0()};
+  $("amain").querySelectorAll("[data-kk]").forEach(b=>b.onclick=()=>{const k=b.dataset.kk;if(k==="del")G.cur=G.cur.slice(0,-1);else if(k==="ok"){if(G.cur.length<5){toast("5 lettres !");return}G.g.push(G.cur);G.cur="";if(G.g[G.g.length-1]===G.w){G.end=1;kRec("mot",1)}else if(G.g.length>=6)G.end=2}else if(G.cur.length<5)G.cur+=k;render0()})}
+function vKCalc(){const G=kGS;const nq=()=>{const lv=Math.min(3,Math.floor((G?G.n:0)/5));const op=["+","−","×"][Math.floor(Math.random()*(lv?3:2))];let a=2+Math.floor(Math.random()*(lv>1?50:20)),b=2+Math.floor(Math.random()*(op==="×"?(lv>1?12:9):(lv>1?50:20)));if(op==="−"&&b>a)[a,b]=[b,a];return {q:`${a} ${op} ${b}`,r:op==="+"?a+b:op==="−"?a-b:a*b}};
+  if(!G){$("amain").innerHTML=`<div class="fx">${kBack()}<div class="evn">60 secondes pour enchaîner un maximum de calculs. Ça accélère au fil des bonnes réponses !<br><button type="button" class="btn btn-rose" id="kcGo" style="margin-top:12px">C'est parti</button></div></div>`;kBind();
+    $("kcGo").onclick=()=>{kGS={n:0,t0:Date.now(),end:0};kGS.c=nq();kGS.iv=setInterval(()=>{const l=60-Math.floor((Date.now()-kGS.t0)/1000);const el=$("kcT");if(el)el.textContent=Math.max(0,l)+" s";if(l<=0){clearInterval(kGS.iv);kGS.end=1;kRec("calc",kGS.n,true);render0()}},250);render0()};return}
+  if(G.end){$("amain").innerHTML=`<div class="fx">${kBack()}<div class="evn">⚡ <b>${G.n}</b> bonne${G.n>1?"s":""} réponse${G.n>1?"s":""} en 60 s<br>Record : ${(S.krec||{}).calc||G.n}<br><button type="button" class="btn btn-rose" id="kcR" style="margin-top:12px">Rejouer</button></div></div>`;kBind();$("kcR").onclick=()=>{kGS=null;render0()};return}
+  $("amain").innerHTML=`<div class="fx">${kBack()}<div class="kcalc"><small id="kcT">60 s</small><b>${G.c.q} = ?</b><form id="kcF"><input id="kcI" inputmode="numeric" autocomplete="off" aria-label="Ta réponse"><button type="submit" class="btn btn-rose">OK</button></form><small>Score : ${G.n}</small></div></div>`;kBind();
+  const i=$("kcI");i.focus();$("kcF").onsubmit=e=>{e.preventDefault();if(parseInt(i.value,10)===G.c.r){G.n++;G.c=nq()}else{i.classList.add("bad");setTimeout(()=>i.classList.remove("bad"),300)}render0()}}
+function vKQui(){const G=kGS;
+  if(!G||G.end){$("amain").innerHTML=`<div class="fx">${kBack()}<div class="evn">${G&&G.end?`🎭 <b>${G.ok}</b> trouvé${G.ok>1?"s":""} !<br><br>`:""}Mets le téléphone sur ton front, écran vers les autres. Ils te font deviner sans dire le mot. Touche ✅ si tu trouves, ⏭️ pour passer. 60 secondes !<br><button type="button" class="btn btn-rose" id="kqGo" style="margin-top:12px">${G?"Rejouer":"Jouer"}</button></div></div>`;kBind();
+    $("kqGo").onclick=()=>{const L=[...KQUI].sort(()=>Math.random()-.5);kGS={L,i:0,ok:0,t0:Date.now(),end:0};kGS.iv=setInterval(()=>{const l=60-Math.floor((Date.now()-kGS.t0)/1000);const el=$("kqT");if(el)el.textContent=Math.max(0,l)+" s";if(l<=0){clearInterval(kGS.iv);kGS.end=1;render0()}},250);render0()};return}
+  $("amain").innerHTML=`<div class="fx">${kBack()}<div class="kqui"><small id="kqT">60 s</small><b>${esc(G.L[G.i%G.L.length])}</b><div class="two"><button type="button" class="btn btn-line" id="kqP">⏭️ Passer</button><button type="button" class="btn btn-rose" id="kqO">✅ Trouvé</button></div><small>${G.ok} trouvé${G.ok>1?"s":""}</small></div></div>`;kBind();
+  $("kqP").onclick=()=>{G.i++;render0()};$("kqO").onclick=()=>{G.ok++;G.i++;render0()}}
+/* --- côté parents : valider défis et sorties --- */
+function kidParentBox(){if(isKid())return "";const D=Object.values(KSP).filter(v=>v&&v.kk&&v.done);const So=Object.values(KSP).filter(v=>v&&v.id&&v.status==="attente"&&v.t);
+  const todo=[];D.forEach(d=>Object.keys(d.done||{}).filter(k=>!(d.ok||{})[k]).forEach(k=>{const i=+k.split("_")[1];if(KDEFIS[i])todo.push({d,k,i})}));
+  if(!todo.length&&!So.length)return "";
+  return `<div class="kpbox"><b>🧒 À valider pour vos enfants</b>
+   ${todo.map(({d,k,i})=>`<div class="kpr"><span>${KDEFIS[i][0]} <b>${esc(d.k)}</b> a fait : ${esc(KDEFIS[i][1])}</span><button type="button" class="chip on" data-kok="${d.kk}|${k}">✓ Valider</button></div>`).join("")}
+   ${So.map(s=>`<div class="kpr"><span>${s.e||"✨"} <b>${esc(s.k)}</b> propose : ${esc(s.t)}, ${esc(fmtDay(s.date))} à ${esc(s.h||"")}${s.crew?" (avec sa bande)":" (en famille)"}</span><span class="two"><button type="button" class="chip on" data-kso="${s.id}" data-v="ok">👍 Oui</button><button type="button" class="chip" data-kso="${s.id}" data-v="non">✋ Non</button></span></div>`).join("")}</div>`}
+document.addEventListener("click",e=>{const a=e.target.closest("[data-kok],[data-kso]");if(!a||!$("amain").contains(a))return;
+  if(a.dataset.kok){const[kk,k]=a.dataset.kok.split("|");const d=KSP["defis_"+kk];if(!d)return;const v={...d,ok:{...(d.ok||{}),[k]:Date.now()}};kspSet("defis_"+kk,v);
+    const c=cagOf(kk)||cagLoadLocal(kk);if(c&&c.on){if(!c.rules.defis){c.rules.defis={m:"Défis",obj:0,goal:60,amt:10,kind:"euros",gift:"",since:Date.now()-1}}cagSave(kk)}toast("Défi validé : +15 points 🏆");render0()}
+  else{const s=KSP["sortie_"+a.dataset.kso];if(!s)return;kspSet("sortie_"+s.id,{...s,status:a.dataset.v});toast(a.dataset.v==="ok"?"Sortie acceptée 👍":"Sortie refusée");render0()}});
 /* Tuiles jeux sur le site */
 $("gamesgrid").innerHTML=GAMES.map(g=>`<button type="button" class="gtile ${g.g}" data-site-game="${g.id}"><span class="live">EN DIRECT</span><span class="gi"><svg aria-hidden="true"><use href="#${g.ic}"/></svg></span><h3>${g.n}</h3><p>${g.d}</p><span class="go" style="margin-top:auto;font-weight:700;display:flex;gap:6px;align-items:center">Lancer une partie <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>`).join("");
 $("gamesgrid").querySelectorAll("[data-site-game]").forEach(b=>b.onclick=()=>openApp("jouer",b.dataset.siteGame));
@@ -4297,6 +4592,7 @@ try{if(location.hash==="#app")openApp("home")}catch(e){}
 <style>
 /* autonome : pas de génie */
 [data-tab="genie"],[data-open="genie"],#dCoach,#kCoach,.ttbtn,#fNewB,#fRegen,[data-regen]{display:none!important}
+
 .jx-ov{position:fixed;inset:0;z-index:9999;background:rgba(31,14,24,.45);display:flex;align-items:flex-end;justify-content:center;padding:16px}
 .jx-box{position:relative;background:var(--card,#fff);color:var(--ink,#1F0E18);border-radius:24px;padding:26px 20px 20px;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.25);font-family:var(--f-body,system-ui)}
 @media(min-width:700px){.jx-ov{align-items:center}}
@@ -4304,6 +4600,7 @@ try{if(location.hash==="#app")openApp("home")}catch(e){}
 .jx-box input,.jx-row input{width:100%;box-sizing:border-box;border:1.5px solid var(--line,#eee);border-radius:14px;padding:13px 14px;font:inherit;font-size:16px;margin-bottom:10px;background:var(--card,#fff);color:inherit}
 .jx-x{position:absolute;top:10px;right:12px;border:0;background:none;font-size:1.6rem;color:inherit;cursor:pointer}
 .jx-s{min-height:1em;font-weight:600}.jx-inv{margin-top:16px}.jx-row{display:flex;gap:8px;flex-wrap:wrap}.jx-row input{flex:1 1 200px;margin:0}
+.jx-nav{margin-right:8px;white-space:nowrap}.jx-nav:only-child{margin:0}
 .jx-chip{font-size:1rem}.jx-chip.on{color:#1a9b5a}
 </style>
 <script src="ui.js"></script>
