@@ -1294,12 +1294,18 @@ Mets null pour un mode absurde (ex. à pied au-delà de 2 h, vélo au-delà de 3
     S.tt=S.tt||{};S.tt[ttKey(q)]=o;const ks=Object.keys(S.tt);if(ks.length>60)delete S.tt[ks[0]];save();
     const tmp=document.createElement("div");tmp.innerHTML=wazeBtn(q,"");box.replaceWith(tmp.firstElementChild)}
   catch(e){st.textContent=gErr(e)}}
-document.addEventListener("click",e=>{const b=e.target.closest(".ttbtn");if(!b)return;const box=b.closest(".goto");if(!box||box.querySelector(".ttform"))return;
+document.addEventListener("click",e=>{const b=e.target.closest(".ttbtn");if(!b)return;const box=b.closest(".goto");if(!box||box.querySelector(".ttform")||box.dataset.busy)return;
+  const show=()=>{const tmp=document.createElement("div");tmp.innerHTML=wazeBtn(box.dataset.dest,"");box.replaceWith(tmp.firstElementChild)};
+  if(!/Changer/.test(b.textContent)){box.dataset.busy=1;const st=document.createElement("p");st.className="ttnote";box.appendChild(st);
+    (async()=>{const fresh=S.departLL&&S.geoTs&&Date.now()-S.geoTs<36e5;const ok=fresh||await useMyPosition(st);delete box.dataset.busy;
+      if(ok){st.remove();if(ttGet(box.dataset.dest))show();else ttCompute(box)}else{setTimeout(()=>st.remove(),6000);ttForm(box)}})();return}
+  ttForm(box)});
+function ttForm(box){
   const f=document.createElement("form");f.className="ttform";f.innerHTML=`<button type="button" class="btn btn-line ttgeo">📍 Utiliser ma position</button><input placeholder="…ou tapez un départ (adresse, quartier, ville)" maxlength="100" value="${esc(S.departLL?"":(S.depart||""))}" aria-label="Point de départ"><button type="submit" class="btn btn-rose">OK</button><p class="ttnote ttst"></p>`;
-  box.insertBefore(f,box.querySelector(".gorow"));const i=f.querySelector("input");i.focus({preventScroll:true});
+  box.insertBefore(f,box.querySelector(".gorow"));const i=f.querySelector("input");
   const redo=()=>{f.remove();if(ttGet(box.dataset.dest)){const t=document.createElement("div");t.innerHTML=wazeBtn(box.dataset.dest,"");box.replaceWith(t.firstElementChild)}else ttCompute(box)};
   f.querySelector(".ttgeo").onclick=async()=>{if(await useMyPosition(f.querySelector(".ttst")))redo()};
-  f.onsubmit=ev=>{ev.preventDefault();const v=i.value.trim();if(!v)return;S.depart=v;S.departLL=null;save();f.remove();if(ttGet(box.dataset.dest)){const t=document.createElement("div");t.innerHTML=wazeBtn(box.dataset.dest,"");box.replaceWith(t.firstElementChild)}else ttCompute(box)}});
+  f.onsubmit=ev=>{ev.preventDefault();const v=i.value.trim();if(!v)return;S.depart=v;S.departLL=null;save();f.remove();if(ttGet(box.dataset.dest)){const t=document.createElement("div");t.innerHTML=wazeBtn(box.dataset.dest,"");box.replaceWith(t.firstElementChild)}else ttCompute(box)}}
 function affPlace(x,c){const a=x.pratique&&x.pratique.acces||"";const addr=/\d/.test(a)&&!/m[ée]tro|tram|bus|ligne/i.test(a)?a:"";return addr?`${x.lieu||""}, ${addr}`:[x.lieu,(typeof CITYN!=="undefined"&&CITYN[c])||""].filter(Boolean).join(", ")}
 /* ===== NOTES DES COUPLES ===== */
 let NOTES={}, MYID=null, NDB=null;
