@@ -10,6 +10,15 @@ window.J120.ready=sessP;
 // invitation par lien e-mail : ?c=code ou ?e=code-prenom -> hash de l'appli
 sessP.then(()=>{try{const q=new URLSearchParams(location.search);const c=q.get("c"),e=q.get("e");if(c||e){history.replaceState(null,"",location.pathname+(c?"#c-"+c:"#e-"+e));if(!sessionStorage.j120r){sessionStorage.j120r=1;location.reload()}}else{try{sessionStorage.removeItem("j120r")}catch(e){}}
   const h=localStorage.getItem("j120_hash");if(h&&!location.hash.startsWith("#c-")&&!location.hash.startsWith("#e-")){localStorage.removeItem("j120_hash");if(h!==location.hash){location.hash=h}}}catch(e){}});
+// ----- envoi direct d'une fiche (sans connexion) : #i-code~fiche -----
+(function(){const hm=location.hash.match(/^#i-([a-z0-9]{4,10})~([A-Za-z0-9_-]+)$/);if(!hm||!sb)return;try{if(sessionStorage.j120imp===hm[2].slice(0,40)){sessionStorage.removeItem("j120imp");return}}catch(e){}
+  const orig=location.hash;history.replaceState(null,"",location.pathname+location.search);
+  (async()=>{let ok=0,name="";try{const b=atob(hm[2].replace(/-/g,"+").replace(/_/g,"/"));const u=Uint8Array.from(b,c=>c.charCodeAt(0));
+    const txt=await new Response(new Blob([u]).stream().pipeThrough(new DecompressionStream("gzip"))).text();const raw=JSON.parse(txt);
+    for(const f0 of (Array.isArray(raw)?raw:[raw])){if(!f0||!f0.id||!f0.quiz)continue;const f={...f0};if(f.levels&&f.levels.length){f.lvl=0;f.quiz=f.levels[0]}name=f.k||name;
+      const {data,error}=await sb.rpc("push_fiche",{c:hm[1],f});if(!error&&data>0)ok++}}catch(e){}
+    if(ok){const show=()=>{const d=document.createElement("div");d.className="jx-ov";d.innerHTML='<div class="jx-box" style="text-align:center"><h3>✅ C\'est dans l\'espace de '+(name||"votre enfant").replace(/[<>&"]/g,"")+'</h3><p>'+(ok>1?ok+" fiches et leurs quiz sont arrivées":"La fiche et ses quiz sont arrivés")+' dans son espace. Il n\'a qu\'à ouvrir (ou recharger) sa page.</p><button type="button" class="btn btn-rose wide">Parfait</button></div>';document.body.appendChild(d);d.querySelector("button").onclick=()=>d.remove()};document.body?setTimeout(show,800):addEventListener("DOMContentLoaded",()=>setTimeout(show,800))}
+    else{try{sessionStorage.j120imp=hm[2].slice(0,40)}catch(e){}location.hash=orig;location.reload()}})()})();
 const uid=()=>window.J120.session&&window.J120.session.user&&window.J120.session.user.id;
 const joined={};
 async function ensure(path){const m=String(path).match(/^couples\/([a-z0-9]{4,10})/);if(!m||joined[m[1]])return;joined[m[1]]=sb.rpc("join_couple",{c:m[1]}).then(r=>{if(r.error)console.warn(r.error)});await joined[m[1]]}
