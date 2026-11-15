@@ -1,5 +1,8 @@
 /* jusqua120ans autonome : remplace les capacités Claude par Supabase */
 (function(){
+// anciens codes du site avec le génie -> espace famille du site familial
+try{const AL={yz6n6:"mgsc2",cjunm:"mgsc2"};const m=location.hash.match(/^#([se])-([a-z0-9]{4,10})(.*)$/);if(m&&AL[m[2]])history.replaceState(null,"",location.pathname+location.search+"#"+m[1]+"-"+AL[m[2]]+m[3]);
+  const v=JSON.parse(localStorage.getItem("j120")||"null");if(v){let ch=0;if(AL[v.couple]){v.couple=AL[v.couple];ch=1}if(v.kidMode&&AL[v.kidMode.code]){v.kidMode.code=AL[v.kidMode.code];ch=1}if(ch)localStorage.setItem("j120",JSON.stringify(v))}}catch(e){}
 // Famille visible par défaut tant que le profil ne dit pas « pas d'enfants »
 try{const v=JSON.parse(localStorage.getItem("j120")||"null")||{};const m=v.mods||{};if(!("famille" in m)&&!(v.ans&&v.ans.enfants==="non")){v.mods={...m,famille:true};localStorage.setItem("j120",JSON.stringify(v))}}catch(e){}
 const CFG=window.J120_CONFIG||{};const OK=!!(CFG.url&&CFG.key&&window.supabase);
