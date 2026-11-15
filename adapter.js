@@ -1,5 +1,7 @@
 /* jusqua120ans autonome : remplace les capacités Claude par Supabase */
 (function(){
+// Famille visible par défaut tant que le profil ne dit pas « pas d'enfants »
+try{const v=JSON.parse(localStorage.getItem("j120")||"null")||{};const m=v.mods||{};if(!("famille" in m)&&!(v.ans&&v.ans.enfants==="non")){v.mods={...m,famille:true};localStorage.setItem("j120",JSON.stringify(v))}}catch(e){}
 const CFG=window.J120_CONFIG||{};const OK=!!(CFG.url&&CFG.key&&window.supabase);
 const sb=OK?window.supabase.createClient(CFG.url,CFG.key,{auth:{flowType:"implicit",persistSession:true,detectSessionInUrl:true}}):null;
 window.J120={sb,ready:null,session:null};
