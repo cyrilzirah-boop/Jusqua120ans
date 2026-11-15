@@ -813,6 +813,7 @@ section[id]{scroll-margin-top:calc(var(--navh,150px) + 14px)}
 .jx-ov{position:fixed;inset:0;z-index:9999;background:rgba(31,14,24,.45);display:flex;align-items:flex-end;justify-content:center;padding:16px}
 .jx-box{position:relative;background:var(--card,#fff);color:var(--ink,#1F0E18);border-radius:24px;padding:26px 20px 20px;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.25)}
 @media(min-width:700px){.jx-ov{align-items:center}}.jx-box h3{font-family:var(--f-display);font-size:1.35rem;margin:0 0 8px}.jx-box p{margin:0 0 14px;line-height:1.45}.jx-box a.btn{display:flex;justify-content:center;text-decoration:none}
+.flvm{display:block;margin-top:4px;font-size:.78rem;font-weight:700;color:var(--muted)}.flvbox{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin:12px 0}.flvbox small{color:var(--muted)}.flvc{display:flex;flex-wrap:wrap;gap:6px}
 /* ===== Espace jeune ===== */
 .kdefs{display:grid;gap:10px}.kdef{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px}
 .kdef.dn{border-color:#FFD98A;background:#FFF9EA}.kdef.ok{border-color:#9ADBB5;background:#EEFBF3}.kde{font-size:1.7rem}.kdt{flex:1;display:flex;flex-direction:column;font-weight:700;line-height:1.3}.kdt small{font-weight:500;color:var(--muted)}
@@ -3853,6 +3854,7 @@ function vFiche(){const f=fGet(fCur);if(!f){devMode=null;return vDevoirs()}
   $("amain").innerHTML=`<div class="fx"><div class="ghead"><button type="button" class="iconbtn" id="fB" aria-label="Retour"><svg class="i"><use href="#i-back"/></svg></button><h2 class="h2app" style="font-size:1.3rem">Fiche de révision</h2></div>
    ${!isKid()&&f.k?`<div class="fsend"><button type="button" class="btn btn-rose wide" id="fSend">📲 Mettre dans l'espace de ${esc(f.k)} (fiche + quiz)</button><small>${esc(f.k)} la reçoit dans son espace jusqua20sur20, sur son téléphone, et fait le quiz chronométré de son côté, en 3 niveaux de difficulté qu'il débloque en réussissant (12/20 minimum).${S.couple?` Pour voir ses notes et sa cagnotte : <a href="${KID_SITE}#s-${S.couple}" target="_blank" rel="noopener">suivre ${esc(f.k)} sur votre site perso</a>.`:""}</small></div>`:""}
    ${ficheHTML(f)}
+   ${f.levels&&f.levels.length>1?`<div class="flvbox"><b>🎯 ${f.levels.length} niveaux de quiz</b>${lvlChips(f)}<small>Réussis un niveau avec 12/20 ou plus pour débloquer le suivant.</small></div>`:""}
    <div class="factions">${prep(f)!=null?`<div class="prep"><span>Prêt pour le contrôle</span><div class="mtrack"><i style="width:${prep(f)}%"></i></div><b>${prep(f)} %</b></div>`:""}<button type="button" class="btn btn-rose" id="fQuiz">🎯 Le défi : quiz noté sur 20</button>${(f.errs||[]).length?`<button type="button" class="btn btn-line" id="fErr" style="grid-column:1/-1">🔁 Rejouer mes ${f.errs.length} erreur${f.errs.length>1?"s":""}</button>`:""}${SAMPLE&&!isKid()?`<button type="button" class="btn btn-line" id="fNewQ" style="grid-column:1/-1">✨ Nouveau défi, plus difficile</button>`:""}<button type="button" class="btn btn-line" id="fAsk">💬 Poser une question</button><button type="button" class="btn btn-line" id="fPr" style="grid-column:1/-1">📄 PDF à imprimer</button></div>
    <div class="wsec"><div class="wst"><span>📈</span>Ses notes</div>
     ${sc.length?`<div class="fscores">${sc.slice(-8).map(x=>`<span><b>${x.n}/20</b><small>${new Date(x.ts).toLocaleDateString("fr-FR",{day:"numeric",month:"short"})}</small></span>`).join("")}</div>${sc.length>1&&sc[sc.length-1].n>sc[0].n?`<p class="disc">+${sc[sc.length-1].n-sc[0].n} points depuis le premier essai : bravo ! 🎉</p>`:""}`:`<p class="disc">Faites le quiz pour voir sa note ici. On peut le refaire autant de fois qu'on veut.</p>`}
@@ -4032,7 +4034,7 @@ async function kidLink(i){const k=kids()[i];if(!k)return;if(!S.couple){try{await
 function vKid(){const n=S.pseudo||kidName(),L=fiches().filter(f=>nrm(f.k)===KM().k);
   $("amain").innerHTML=`<div class="fx"><div class="lhello"><small>🎯 jusqua20sur20 · ton espace de révision</small><h2 class="h2app">Salut ${esc(n)} ! 👋</h2></div>
    ${cagCard()}
-   ${L.length?`<div class="flist">${L.map(f=>{const b=fBest(f);return `<button type="button" class="fcard" data-fid="${f.id}" style="--fc:${matColor(f.m)}"><span class="fm">${esc(f.m||"Cours")}</span><b>${esc(f.t)}</b><small>${f.d?fDays(f):"À réviser"}</small><span class="fsc">${b!=null?`Ma meilleure note : <b>${b}/20</b>`:"Quiz pas encore fait"}</span></button>`}).join("")}</div>`
+   ${L.length?`<div class="flist">${L.map(f=>{const b=fBest(f);return `<button type="button" class="fcard" data-fid="${f.id}" style="--fc:${matColor(f.m)}"><span class="fm">${esc(f.m||"Cours")}</span><b>${esc(f.t)}</b><small>${f.d?fDays(f):"À réviser"}</small><span class="fsc">${b!=null?`Ma meilleure note : <b>${b}/20</b>`:"Quiz pas encore fait"}</span>${lvlChips(f,true)}</button>`}).join("")}</div>`
     :`<div class="evn">Pas encore de fiche. Quand tes parents en préparent une à partir de ton cours, elle apparaît ici.</div>`}
    <button type="button" class="lcurve" id="kCoach"${KPREV?" hidden":""} style="background:linear-gradient(135deg,#FF9E7A,#FF3B6B);margin-top:12px"><span>🧞</span><span><b>Le génie des devoirs</b><small>Il t'explique pas à pas, sans donner la réponse</small></span><span class="go">›</span></button></div>`;
   $("amain").querySelectorAll("[data-fid]").forEach(b=>b.onclick=()=>{fCur=b.dataset.fid;devMode="fiche";render0()});
@@ -4168,7 +4170,7 @@ ${QZ_SPEC}
 Appuie-toi uniquement sur la fiche. Réponds UNIQUEMENT avec {"quiz":[...]}.`,opts)}catch(e){err=e;if(e&&(e.code==="cancelled"||e.code==="not_granted"||e.code==="rate_limited"))break;delete opts.modelTier}}
     if(!r)throw err||{message:"Pas de réponse du génie"};
     const Q=(Array.isArray(r.quiz)?r.quiz:Array.isArray(r)?r:[]).map(normQ).filter(q=>q.q);if(Q.length<5)throw {code:"x",message:"Le génie a renvoyé un quiz incomplet. Réessayez."};
-    f.quiz=Q;f.errs=[];fSave(f);ov.remove();fQuizStart(f);render0();$("amain").scrollTop=0;toast("Nouveau défi prêt ! 🎯")}
+    if(f.levels&&f.levels.length){f.levels=[...f.levels,Q].slice(-6);f.lvl=f.levels.length-1}f.quiz=Q;f.errs=[];fSave(f);ov.remove();fQuizStart(f);render0();$("amain").scrollTop=0;toast("Nouveau défi prêt ! 🎯")}
   catch(e){if(e&&e.code==="cancelled")return;ov.innerHTML=`<div class="busybox"><b>😕 Le nouveau défi n'a pas pu être préparé</b><small>${esc(gErr(e))}</small><div class="two"><button type="button" class="btn btn-rose" id="busyR">Réessayer</button><button type="button" class="btn btn-line" id="busyC">Fermer</button></div></div>`;
     $("busyR").onclick=()=>{ov.remove();devBusy=null;fRegen(f,harder)};$("busyC").onclick=()=>ov.remove()}
   finally{devBusy=null}}
@@ -4639,6 +4641,12 @@ function evoHTML(){const L=quizHistory().slice().sort((a,b)=>a.ts-b.ts);if(!L.le
 document.addEventListener("click",async e=>{const b=e.target.closest("[data-sendall]");if(!b)return;const k=kids()[+b.dataset.sendall];if(!k)return;if(!S.couple){try{await agCreate()}catch(x){}}if(!S.couple){toast("Activez d'abord l'espace à deux dans « Agenda »");return}
   const FS=fiches().filter(f=>nrm(f.k)===nrm(k.n)).slice(0,12).map(({scores,learned,errs,real,pend,...c})=>c);let pl;try{pl=await gz64(JSON.stringify(FS))}catch(x){toast("Envoi impossible sur ce navigateur");return}
   sendSheet(`${KID_SITE}#i-${S.couple}~${pl}`,`${FS.length} fiche${FS.length>1?"s":""} et leurs quiz sont prêtes pour ${k.n}.`)});
+function lvlChips(f,mini){if(!(f.levels&&f.levels.length>1))return "";const cur=f.lvl||0;const nm=i=>LVLN[i]||("Niveau "+(i+1));
+  if(mini)return `<span class="flvm">${f.levels.map((_,i)=>i<=cur?"🔓":"🔒").join("")} ${f.levels.length} niveaux · ${esc(nm(cur))}</span>`;
+  return `<div class="flvc">${f.levels.map((_,i)=>`<button type="button" class="chip${i===cur?" on":""}" data-lvl="${i}"${i>cur&&isKid()?' aria-disabled="true"':""}>${i<=cur||!isKid()?"🔓":"🔒"} ${esc(nm(i))}</button>`).join("")}</div>`}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-lvl]");if(!b)return;const f=fGet(fCur);if(!f||!f.levels)return;const i=+b.dataset.lvl,cur=f.lvl||0;
+  if(i>cur&&isKid()){toast("Atteins 12/20 au niveau "+(cur+1)+" pour débloquer celui-ci 🔒");return}
+  f.lvl=i;f.quiz=f.levels[i].map(normQ);f.errs=[];fSave(f);fQuizStart(f);render0();$("amain").scrollTop=0;toast("C'est parti : "+(LVLN[i]||"niveau "+(i+1))+" 🎯")});
 /* Tuiles jeux sur le site */
 $("gamesgrid").innerHTML=GAMES.map(g=>`<button type="button" class="gtile ${g.g}" data-site-game="${g.id}"><span class="live">EN DIRECT</span><span class="gi"><svg aria-hidden="true"><use href="#${g.ic}"/></svg></span><h3>${g.n}</h3><p>${g.d}</p><span class="go" style="margin-top:auto;font-weight:700;display:flex;gap:6px;align-items:center">Lancer une partie <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>`).join("");
 $("gamesgrid").querySelectorAll("[data-site-game]").forEach(b=>b.onclick=()=>openApp("jouer",b.dataset.siteGame));
