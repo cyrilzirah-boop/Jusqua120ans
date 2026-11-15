@@ -717,9 +717,9 @@ section[id]{scroll-margin-top:calc(var(--navh,150px) + 14px)}
 .fcard .fm{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--fc)}.fcard b{font-size:.98rem}.fcard small{color:var(--muted);font-size:.8rem}.fcard .fsc{font-size:.8rem;color:var(--ink)}
 .factions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}.factions .btn{padding:12px 10px;font-size:.88rem;justify-content:center}.factions .btn-rose{grid-column:1/-1}
 .fscores{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.fscores span{display:flex;flex-direction:column;align-items:center;background:var(--bg2);border-radius:14px;padding:8px 12px}.fscores small{font-size:.72rem;color:var(--muted)}
-.choice.qok{background:#DDF5EC;border-color:#2BA884}.choice.qko{background:#FFE3E3;border-color:#E03E3E}
+.choice.qok{background:rgba(43,168,132,.22);border-color:#2BA884}.choice.qko{background:rgba(224,62,62,.2);border-color:#E03E3E}
 .qopen{width:100%;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:16px;padding:12px;font:inherit;margin-top:12px}
-.qfb{margin-top:12px;border-radius:16px;padding:12px 14px}.qfb.ok{background:#DDF5EC}.qfb.ko{background:#FFE3E3}.qfb.half{background:#FFF1D6}.qfb p{margin:4px 0 0;font-size:.9rem}
+.qfb{margin-top:12px;border-radius:16px;padding:12px 14px}.qfb.ok{background:rgba(43,168,132,.22);border:1px solid rgba(43,168,132,.5)}.qfb.ko{background:rgba(224,62,62,.2);border:1px solid rgba(224,62,62,.45)}.qfb.half{background:rgba(240,170,40,.22);border:1px solid rgba(240,170,40,.5)}.qfb p{margin:4px 0 0;font-size:.9rem}
 .qres{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;background:color-mix(in srgb,var(--fc) 14%,var(--card));border-radius:24px;padding:22px;margin-bottom:12px}.qres span{font-size:2.6rem}.qres b{font-family:var(--f-display);font-size:2.4rem}.qres small{color:var(--muted);max-width:280px}
 .qrev{padding:10px 0;border-bottom:1px solid var(--line)}.qrev p{margin:4px 0 0;font-size:.86rem;color:var(--muted)}
 .kid .kname{font:inherit;font-weight:700;background:none;color:inherit;padding:0;width:auto;height:auto;border-radius:0}
@@ -1271,7 +1271,7 @@ function geoLocate(){return new Promise((ok,ko)=>{
   try{navigator.geolocation.getCurrentPosition(p=>{clearTimeout(t);ok([+p.coords.latitude.toFixed(4),+p.coords.longitude.toFixed(4)])},e=>{clearTimeout(t);ko(e&&e.code===1?"refus":"echec")},{enableHighAccuracy:false,timeout:7500,maximumAge:600000})}catch(e){clearTimeout(t);ko("bloque")}})}
 const GEOERR={bloque:"📍 Votre navigateur bloque la localisation pour ce site. Autorisez-la dans ses réglages (iPhone : Réglages › Confidentialité › Service de localisation › Safari), ou touchez simplement votre ville ci-dessus : elle restera mémorisée.",absent:"📍 Ce navigateur ne propose pas la localisation : touchez votre ville ci-dessus.",refus:"📍 Accès à la position refusé. Si vous n'avez rien refusé, c'est l'appli Claude qui bloque la localisation : touchez votre ville ci-dessus, elle restera mémorisée.",delai:"📍 Pas de réponse de la localisation : l'appli Claude la bloque sans doute. Touchez votre ville ci-dessus.",echec:"📍 Impossible de vous localiser : touchez votre ville ci-dessus."};
 async function useMyPosition(st){if(st){st.textContent="📍 Localisation en cours… (acceptez la demande si elle apparaît)";st.classList.add("geost")}
-  try{const ll=await geoLocate();const n=nearestCity(ll);S.departLL=ll;S.depart="ma position"+(n.km<60?" (près de "+CITYN[n.k]+")":"");S.geoTs=Date.now();save();return {ll,n}}
+  try{const ll=await geoLocate();const n=nearestCity(ll);S.departLL=ll;S.geoTown=null;try{const ac=new AbortController();setTimeout(()=>ac.abort(),4000);const j=await fetch("https://api-adresse.data.gouv.fr/reverse/?lon="+ll[1]+"&lat="+ll[0],{signal:ac.signal}).then(r=>r.json());const pr=j&&j.features&&j.features[0]&&j.features[0].properties;if(pr&&pr.city){S.geoTown=pr.city;S.geoTownFor=n.k}}catch(e){}S.depart="ma position"+(n.km<60?" (près de "+CITYN[n.k]+")":"");S.geoTs=Date.now();save();return {ll,n}}
   catch(e){if(st)st.textContent=GEOERR[e]||GEOERR.echec;return null}}
 function wazeUrl(q){return "https://waze.com/ul?q="+encodeURIComponent(q)+"&navigate=yes"}
 const gmUrl=(q,m)=>"https://www.google.com/maps/dir/?api=1"+(S.departLL?"&origin="+S.departLL.join(","):"")+"&destination="+encodeURIComponent(q)+"&travelmode="+m;
@@ -2647,7 +2647,7 @@ const TYC={expo:"ty-expo",theatre:"ty-theatre",concert:"ty-concert",sortie:"ty-s
 let LIVE={}, affType="tout", affMine=false;
 const todayS=()=>ymd(new Date());
 function curCity(){const c=S.trip||S.city||S.ans.ville||null;return c&&CITYN[c]?c:(c&&CITYN[String(c).toLowerCase()]?String(c).toLowerCase():null)}
-function cityLabel(){const c=curCity();return c?(S.trip?"✈ "+CITYN[c]:"📍 "+CITYN[c]):"📍 Ville"}
+function cityLabel(){const c=curCity();return c?(S.trip?"✈ "+CITYN[c]:"📍 "+(S.geoTown&&S.geoTownFor===c?S.geoTown:CITYN[c])):"📍 Ville"}
 function affItems(c){const L=(LIVE[c]&&Array.isArray(LIVE[c].items))?LIVE[c].items:(AFFD[c]||[]);const t=todayS();return L.map((x,i)=>({...x,_i:i,_c:c})).filter(x=>(!x.au||x.au>=t)&&x.statut!=="annulé"&&x.statut!=="terminé")}
 function uneItems(){const t=todayS();const L=(LIVE.une&&Array.isArray(LIVE.une.items))?LIVE.une.items:UNE;return L.map((x,i)=>({...x,_i:i})).filter(x=>!x.au||x.au>=t)}
 function myGouts(){return Array.isArray(S.ans.gouts)?S.ans.gouts:[]}
@@ -2674,7 +2674,7 @@ function bindAff(root){
 function affRefresh(){renderSiteAff();if(!$("app").hidden&&(tab==="affiche"||tab==="auj"||tab==="cercle"))render0();const ac=$("appCity");if(ac){ac.textContent=cityLabel();ac.classList.toggle("trip",!!S.trip)}}
 function renderSiteAff(){
   const c=curCity();
-  $("siteCity").textContent=c?(S.trip?"✈ "+CITYN[c]+" (voyage)":CITYN[c]):"Choisir";
+  $("siteCity").textContent=c?(S.trip?"✈ "+CITYN[c]+" (voyage)":(S.geoTown&&S.geoTownFor===c?S.geoTown:CITYN[c])):"Choisir";
   $("siteCity").parentElement.classList.toggle("trip",!!S.trip);
   $("affUpd").textContent=`Sélection mise à jour le ${(c&&LIVE[c]&&LIVE[c].updated)||AFF_UPD}`;
   $("siteUne").innerHTML=uneItems().map(uneCard).join("");
@@ -2749,13 +2749,13 @@ function openCity(){
    <label class="clabel">✈ Nous partons à… (facultatif)</label><div class="cityp trip" id="cpTrip">${CITIES.map(([k,l])=>`<button type="button" data-tripc="${k}" aria-pressed="${S.trip===k}">${l}</button>`).join("")}</div>
    ${S.trip?`<button type="button" class="btn btn-line wide" id="cpBack" style="justify-content:center">Revenir à ${CITYN[S.city||S.ans.ville]||"ma ville"}</button>`:""}
    <button type="button" class="btn btn-rose wide" id="cpGeo" style="margin-top:14px;justify-content:center">📍 Me localiser</button><p class="disc" id="cpSt">Votre position sert à choisir la ville la plus proche et à calculer vos trajets. Elle reste sur votre téléphone. D'autres villes arriveront bientôt.</p></div>`,"Choisir la ville");
-  sh.querySelectorAll("[data-home]").forEach(b=>b.onclick=()=>{S.city=b.dataset.home;S.ans.ville=S.city;S.trip=null;save();closeOffer();affRefresh();toastAny("Ville : "+CITYN[S.city])});
+  sh.querySelectorAll("[data-home]").forEach(b=>b.onclick=()=>{S.geoTown=null;S.city=b.dataset.home;S.ans.ville=S.city;S.trip=null;save();closeOffer();affRefresh();toastAny("Ville : "+CITYN[S.city])});
   sh.querySelectorAll("[data-tripc]").forEach(b=>b.onclick=()=>{S.trip=b.dataset.tripc;save();closeOffer();affRefresh();toastAny("Mode voyage : "+CITYN[S.trip]+" ✈")});
   const bk=sh.querySelector("#cpBack"); if(bk)bk.onclick=()=>{S.trip=null;save();closeOffer();affRefresh()};
   const geoGo=sh.querySelector("#cpGeo").onclick=async()=>{const st=sh.querySelector("#cpSt"),r=await useMyPosition(st);if(!r){S.geoFail=Date.now();save();return}S.geoFail=0;
     if(r.n.km>=60){st.textContent=`Vous êtes à environ ${r.n.km} km de ${CITYN[r.n.k]}, notre ville la plus proche. Votre position servira pour les trajets ; choisissez la ville de l'affiche ci-dessus.`;return}
     const home=S.city||S.ans.ville;if(!home||home===r.n.k){S.city=r.n.k;S.ans.ville=r.n.k;S.trip=null}else S.trip=r.n.k;save();closeOffer();affRefresh();
-    toastAny(S.trip?"Vous êtes à "+CITYN[r.n.k]+" : mode voyage ✈":"📍 Ville : "+CITYN[r.n.k])};
+    toastAny(S.trip?"Vous êtes à "+(S.geoTown||CITYN[r.n.k])+" : mode voyage ✈":"📍 "+(S.geoTown&&S.geoTown!==CITYN[r.n.k]?S.geoTown+" · sorties de "+CITYN[r.n.k]:"Ville : "+CITYN[r.n.k]))};
   if(!curCity()&&(!S.geoFail||Date.now()-S.geoFail>864e5))setTimeout(()=>geoGo(),250);
 }
 (async()=>{try{const db=(window.claude&&window.claude.use)?await window.claude.use("db"):null;if(!db)return;
