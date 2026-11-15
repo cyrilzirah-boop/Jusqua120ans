@@ -14,10 +14,14 @@ const uid=()=>window.J120.session&&window.J120.session.user&&window.J120.session
 const joined={};
 async function ensure(path){const m=String(path).match(/^couples\/([a-z0-9]{4,10})/);if(!m||joined[m[1]])return;joined[m[1]]=sb.rpc("join_couple",{c:m[1]}).then(r=>{if(r.error)console.warn(r.error)});await joined[m[1]]}
 const snap=rows=>({docs:rows.map(r=>({id:r.id,data:()=>r.data})),metadata:{fromCache:false}});
+// une fiche part dans TOUS les espaces famille du parent (au cas où l'enfant est rattaché à un autre code)
+let myCodes=null;async function mirror(path,v){try{const m=String(path).match(/^couples\/([a-z0-9]{4,10})\/fiches\/(.+)$/);if(!m||window.J120.kid)return;
+  if(!myCodes)myCodes=sb.from("couple_members").select("code").eq("uid",uid()).then(r=>(r.data||[]).map(x=>x.code));const L=await myCodes;
+  for(const c of L){if(c===m[1])continue;const q="couples/"+c+"/fiches";await sb.from("docs").upsert({path:q+"/"+m[2],parent:q,id:m[2],data:JSON.parse(JSON.stringify(v)),updated_at:new Date().toISOString()})}}catch(e){}}
 function docRef(path){const parts=path.split("/");const id=parts.pop(),parent=parts.join("/");
   return {id,
    async get(){await ensure(path);const {data,error}=await sb.from("docs").select("data").eq("path",path).maybeSingle();if(error)throw error;return {exists:!!data,id,data:()=>data?data.data:undefined}},
-   async set(v){await ensure(path);const {error}=await sb.from("docs").upsert({path,parent,id,data:JSON.parse(JSON.stringify(v)),updated_at:new Date().toISOString()});if(error)throw error},
+   async set(v){await ensure(path);const {error}=await sb.from("docs").upsert({path,parent,id,data:JSON.parse(JSON.stringify(v)),updated_at:new Date().toISOString()});if(error)throw error;mirror(path,v)},
    async update(v){const d=await this.get();await this.set({...(d.data()||{}),...v})},
    async delete(){await ensure(path);const {error}=await sb.from("docs").delete().eq("path",path);if(error)throw error}}}
 function coll(parent){
@@ -39,11 +43,22 @@ function room(){const me=uid()+":"+Math.random().toString(36).slice(2,6);
 let adminP=null;
 const user={id:async()=>uid()||null,me:async()=>({id:uid()}),isOwner:()=>!!window.J120.isAdmin,canEdit:()=>true,can:()=>true,profiles:async()=>({})};
 const downloads={save:async({filename,data})=>{const blob=data instanceof Blob?data:new Blob([data]);const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),60000);return {status:"saved"}}};
+// ----- génie : Google Gemini via la fonction Supabase « genie » -----
+async function b64(b){const u=new Uint8Array(await b.arrayBuffer());let s="";for(let i=0;i<u.length;i+=0x8000)s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(s)}
+function pj(t){let s=String(t||"").trim().replace(/^```(?:json)?\s*/i,"").replace(/```\s*$/,"");try{return JSON.parse(s)}catch(e){}const a=s.search(/[\[{]/);const z=Math.max(s.lastIndexOf("}"),s.lastIndexOf("]"));if(a>=0&&z>a)return JSON.parse(s.slice(a,z+1));throw {code:"bad_json",message:"Réponse illisible du génie"}}
+async function genie(input,o,json){o=o||{};const messages=typeof input==="string"?[{role:"user",content:input}]:input;const images=[];for(const b of (o.images||[]).slice(0,8))images.push({mime:b.type||"image/jpeg",data:await b64(b)});
+  if(o.signal&&o.signal.aborted)throw {code:"aborted",message:"Annulé"};
+  const {data,error}=await sb.functions.invoke("genie",{body:{messages,images,json:!!json}});
+  if(o.signal&&o.signal.aborted)throw {code:"aborted",message:"Annulé"};
+  if(error){let m="Le génie ne répond pas pour le moment";try{const j=await error.context.json();if(j&&j.error)m=j.error}catch(e){}throw {code:/quota|rate|429/i.test(m)?"rate_limited":"error",message:m}}
+  if(!data||data.error)throw {code:"error",message:(data&&data.error)||"Réponse vide"};
+  try{o.onText&&o.onText({text:data.text,delta:data.text})}catch(e){}return {text:data.text,truncated:false}}
+const sample=(i,o)=>genie(i,o,false);sample.json=async(i,o)=>pj((await genie(i,o,true)).text);sample.limits=async()=>({images:{maxCount:6}});
 window.claude={use:async name=>{
   if(name==="downloads")return downloads;
   if(!sb)return null;const s=await sessP;if(!s)return null;
   if(!adminP)adminP=sb.from("admins").select("uid").eq("uid",uid()).maybeSingle().then(r=>{window.J120.isAdmin=!!(r.data)}).catch(()=>{});
-  if(name==="db")return db;if(name==="user"){await adminP;return user}if(name==="room")return room();return null}};
+  if(name==="db")return db;if(name==="user"){await adminP;return user}if(name==="room")return room();if(name==="sample"&&CFG.genie)return sample;return null}};
 // ----- connexion par lien magique -----
 window.J120.login=async(email,redirectQuery)=>{if(!sb)throw new Error("config");const hm=location.hash.match(/^#(c|e)-(.+)$/);if(hm&&!redirectQuery)redirectQuery="?"+hm[1]+"="+encodeURIComponent(hm[2]);else{try{localStorage.setItem("j120_hash",location.hash||"")}catch(e){}}
   const {error}=await sb.auth.signInWithOtp({email,options:{emailRedirectTo:location.origin+location.pathname+(redirectQuery||"")}});if(error)throw error};
